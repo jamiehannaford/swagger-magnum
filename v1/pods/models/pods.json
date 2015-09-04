@@ -2,22 +2,28 @@
   "description": "",
   "allOf": [
     {
-      "$ref": "createNodes.json"
+      "$ref": "createPods.json"
     },
     {
-      "$ref": "listNodes.json"
+      "$ref": "listPods.json"
     },
     {
-      "$ref": "updateNodes.json"
+      "$ref": "updatePods.json"
     },
+    {
+      "$ref": "listPods.json"
+    },
+    {
+      "$ref": "deletePods.json"
+    }
     {
       "type": "object",
       "properties": {
         "uuid": {
           "$ref": "#/definitions/uuid"
         },
-        "image-id": {
-          "$ref": "#/definitions/image-id"
+        "name": {
+          "$ref": "#/definitions/name"
         },
         "links": {
           "$ref": "#/definitions/links"

@@ -7,11 +7,8 @@
     {
       "type": "object",
       "properties": {
-        "uuid": {
-          "$ref": "#/definitions/uuid"
-        },
-        "links": {
-          "$ref": "#/definitions/links"
+        "image_id": {
+          "$ref": "#/definitions/image_id"
         }
       }
     }

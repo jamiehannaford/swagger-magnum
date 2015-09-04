@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "description": "Lists known pods.",
+  "properties": {
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "uuid": {
+      "$ref": "#/definitions/uuid"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "description": "Updates an existing pod.",
+  "allOf": [
+    {
+      "$ref": "createPods.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "#/definitions/uuid"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        }
+      }
+    }
+  ]
+}
