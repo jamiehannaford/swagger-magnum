@@ -1,0 +1,31 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "magnum",
+        "version": "1.0"
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/": {
+        "get":  {
+                "summary": "List versions",
+                "description": "Lists information about all versions of the API.",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": ""}
+                    }
+                },
+        "//": {
+      "$ref": "https://<wherewehostjson>/resources/resourceWithLinkedDefinitions_part1.json"
+    }
+  },

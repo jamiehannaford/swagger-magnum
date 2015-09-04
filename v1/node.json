@@ -1,0 +1,24 @@
+{
+  "type": "object", 
+  "properties": {
+    "node": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the node where work executes. A node can be a
+       bare metal or virtual machine.", 
+      "format": ""
+    }, 
+    "<fillinparam>": {
+      "required": true, 
+      "type": "string", 
+      "description": "words.", 
+      "format": ""
+    }, 
+    "<fileinparam>": {
+      "required": true, 
+      "type": "string", 
+      "description": "words.", 
+      "format": ""
+    }
+  }
+}
