@@ -5,11 +5,13 @@ OpenStack project named magnum
 Directory structure::
 
     containers:
-        swagger.json
-        v1
-            containers.json
-            nodes.json
-            pods.json
-            resourceController.json
-            service.json
+        v1/
+            swagger.json
+            baymodels
+              models/
+                bayModel.json
+                bayModelList.json
+              operations.json
+              parameters.json
+              responses.json
 

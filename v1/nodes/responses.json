@@ -1,0 +1,101 @@
+{
+  "nodeList": {
+    "description": "A collection of nodes",
+    "schema": {
+      "type": "array",
+      "items": {
+        "$ref": "models/nodes.json"
+      }
+    },
+    "examples": {
+      "application/json": {
+        "nodes": [
+          {
+            "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+            "name": "example",
+            "image_id": "Fedora-k8s",
+            "apiserver_port": 8080,
+            "coe": "kubernetes",
+          }
+        ]
+      }
+    }
+  },
+  "nodesListDetailed": {
+    "description": "A collection of nodes with detailed information",
+    "schema": {
+      "type": "array",
+      "items": {
+        "$ref": "models/BayModel.json"
+      }
+    },
+    "examples": {
+      "application/json": {
+        "nodes": [
+          {
+            "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+            "name": "example",
+            "image_id": "Fedora-k8s",
+            "flavor_id": "m1.small",
+            "master_flavor_id": "m1.small",
+            "dns_nameserver": "8.8.1.1",
+            "keypair_id": "keypair1",
+            "external_network_id": "ffc44e4a-2319-4062-bce0-9ae1c38b05ba",
+            "fixed_network": "private",
+            "apiserver_port": 8080,
+            "docker_volume_size": 25,
+            "cluster_distro": "fedora-atomic",
+            "ssh_authorized_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAB",
+            "coe": "kubernetes",
+            "http_proxy": "http://proxy.com:123",
+            "https_proxy": "https://proxy.com:123",
+            "no_proxy": "192.168.0.1,192.168.0.2,192.168.0.3",
+            "created_at": "2015-09-04 10:44:40.885958",
+            "updated_at": "2015-09-04 10:44:40.885958"
+          }
+        ]
+      }
+    }
+  },
+  "SingleBayModel": {
+    "description": "A representation of the bay model",
+    "schema": {
+      "$ref": "models/BayModel.json"
+    },
+    "examples": {
+      "application/json": {
+        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+        "name": "example",
+        "image_id": "Fedora-k8s",
+        "flavor_id": "m1.small",
+        "master_flavor_id": "m1.small",
+        "dns_nameserver": "8.8.1.1",
+        "keypair_id": "keypair1",
+        "external_network_id": "ffc44e4a-2319-4062-bce0-9ae1c38b05ba",
+        "fixed_network": "private",
+        "apiserver_port": 8080,
+        "docker_volume_size": 25,
+        "cluster_distro": "fedora-atomic",
+        "ssh_authorized_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAB",
+        "coe": "kubernetes",
+        "http_proxy": "http://proxy.com:123",
+        "https_proxy": "https://proxy.com:123",
+        "no_proxy": "192.168.0.1,192.168.0.2,192.168.0.3",
+        "created_at": "2015-09-04 10:44:40.885958",
+        "updated_at": "2015-09-04 10:44:40.885958"
+      }
+    }
+  },
+  "NotFound": {
+    "description": "Entity was not found"
+  },
+  "MalformedBody": {
+    "description": "The request contained a malformed JSON body"
+  },
+  "NoContent": {
+    "description": "The request was accepted for processing"
+  },
+  "BaseError": {
+    "description": "An unexpected error occurred"
+  }
+}

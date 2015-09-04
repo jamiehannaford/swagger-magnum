@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "description": "Represents a new node.",
+  "properties": {
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "uuid": {
+      "$ref": "#/definitions/uuid"
+    },
+    "image_id": {
+      "$ref": "#/definitions/image_id"
+    },
+    "type": {
+      "$ref": "#/definitions/type"
+    },
+    "ironic_node_id": {
+      "$ref": "#/definitions/ironic_node_id"
+    }
+  }
+}
