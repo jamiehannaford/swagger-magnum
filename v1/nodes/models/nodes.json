@@ -1,0 +1,22 @@
+{
+  "description": "",
+  "allOf": [
+    {
+      "$ref": "nodeCreate.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "#/definitions/uuid"
+        },
+        "image-id": {
+          "$ref": "#/definitions/image-id"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        }
+      }
+    }
+  ]
+}

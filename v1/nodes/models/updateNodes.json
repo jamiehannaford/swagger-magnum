@@ -1,0 +1,19 @@
+{
+  "description": "Updates an existing node.",
+  "allOf": [
+    {
+      "$ref": "createNodes.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "#/definitions/uuid"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        }
+      }
+    }
+  ]
+}
