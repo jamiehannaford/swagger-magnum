@@ -1,0 +1,150 @@
+{
+  "baymodels": {
+    "get": {
+      "description": "Retrieve a list of bay models",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/BayModelList"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/marker"
+        },
+        {
+          "$ref": "parameters.json#/limit"
+        },
+        {
+          "$ref": "parameters.json#/sortKey"
+        },
+        {
+          "$ref": "parameters.json#/sortDir"
+        }
+      ]
+    },
+    "post": {
+      "description": "Create a new baymodel",
+      "responses": {
+        "201": {
+          "description": "Indicates a successful creation",
+          "schema": {
+            "$ref": "models/BayModel.json"
+          }
+        },
+        "400": {
+          "description": "Indicates that the JSON payload provided does not pass validation. A required property could be missing, or a type is incorrect."
+        },
+        "404": {
+          "description": "Indicates that one of the entities referenced in your JSON payload does not exist"
+        },
+        "409": {
+          "description": "Indicates a conflict, possibly because an entity already exists for the given name"
+        }
+      },
+      "parameters": [
+        {
+          "name": "json",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "models/NewBayModel.json"
+          }
+        }
+      ]
+    }
+  },
+  "baymodelsDetail": {
+    "get": {
+      "description": "Retrieve a list of baymodels with detailed information",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/BayModelListDetailed"
+        }
+      },
+      "parameters": [
+        {
+          "name": "baymodel_uuid",
+          "in": "query",
+          "description": "Allows filtering the collection according to UUID",
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "$ref": "parameters.json#/marker"
+        },
+        {
+          "$ref": "parameters.json#/limit"
+        },
+        {
+          "$ref": "parameters.json#/sortKey"
+        },
+        {
+          "$ref": "parameters.json#/sortDir"
+        }
+      ]
+    }
+  },
+  "baymodelsIdentifier": {
+    "parameters": [
+      {
+        "name": "identifier",
+        "description": "UUID or logical name of a baymodel.",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "get": {
+      "description": "Retrieve information about the given baymodel.",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/SingleBayModel"
+        },
+        "404": {
+          "$ref": "responses.json#/NotFound"
+        },
+        "409": {
+          "description": "A conflict occurred, most likely because there are multiple bay models for the given identifier."
+        }
+      }
+    },
+    "patch": {
+      "description": "Update an existing baymodel.",
+      "parameters": [
+        {
+          "name": "jsonPatchDoc",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "../common/jsonPath.json"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/SingleBayModel"
+        },
+        "400": {
+          "$ref": "responses.json#/MalformedBody"
+        },
+        "404": {
+          "$ref": "responses.json#/NotFound"
+        }
+      }
+    },
+    "delete": {
+      "description": "Permanently deletes a given bay model",
+      "responses": {
+        "204": {
+          "$ref": "responses.json#/NoContent",
+        },
+        "404": {
+          "$ref": "responses.json#/NotFound"
+        },
+        "default": {
+          "$ref": "responses.json#/BaseError"
+        }
+      }
+    }
+  }
+}

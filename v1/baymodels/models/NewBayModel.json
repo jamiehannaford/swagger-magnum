@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "description": "Represents a new bay model about to be created",
+  "properties": {
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "coe": {
+      "$ref": "#/definitions/coe"
+    },
+    "image_id": {
+      "$ref": "#/definitions/imageId"
+    },
+    "flavor_id": {
+      "$ref": "#/definitions/flavorId"
+    },
+    "master_flavor_id": {
+      "$ref": "#/definitions/masterFlavorId"
+    },
+    "dns_nameserver": {
+      "$ref": "#/definitions/dnsNameserver"
+    },
+    "keypair_id": {
+      "$ref": "#/definitions/keypairId"
+    },
+    "external_network_id": {
+      "$ref": "#/definitions/externalNetworkId"
+    },
+    "fixed_network": {
+      "$ref": "#/definitions/fixedNetwork"
+    },
+    "apiserver_port": {
+      "$ref": "#/definitions/apiServerPort"
+    },
+    "docker_volume_size": {
+      "$ref": "#/definitions/dockerVolumeSize"
+    },
+    "ssh_authorized_key": {
+      "$ref": "#/definitions/sshAuthorizedKey"
+    },
+    "cluster_distro": {
+      "$ref": "#/definitions/clusterDistro"
+    },
+    "http_proxy": {
+      "$ref": "#/definitions/httpProxy"
+    },
+    "https_proxy": {
+      "$ref": "#/definitions/httpsProxy"
+    },
+    "no_proxy": {
+      "$ref": "#/definitions/noProxy"
+    }
+  }
+}

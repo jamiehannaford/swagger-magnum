@@ -1,0 +1,38 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "magnum",
+    "version": "1.0"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get":  {
+        "summary": "List versions",
+        "description": "Lists information about all versions of the API.",
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "examples": {
+              "application/json": ""
+            }
+          }
+        }
+      }
+    },
+    "/baymodels": {
+      "$ref": "baymodels/operations.json#/baymodels"
+    },
+    "/baymodels/detail": {
+      "$ref": "baymodels/operations.json#/baymodelsDetail"
+    },
+    "/baymodels/{identifier}": {
+      "$ref": "baymodels/operations.json#/baymodelsIdentifier"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "description": "Represents a bay model, but with partial information",
+  "properties": {
+    "uuid": {
+      "$ref": "#/definitions/uuid"
+    },
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "coe": {
+      "$ref": "#/definitions/coe"
+    },
+    "image_id": {
+      "$ref": "#/definitions/imageId"
+    },
+    "apiserver_port": {
+      "$ref": "#/definitions/apiServerPort"
+    }
+  }
+}

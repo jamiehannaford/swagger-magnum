@@ -1,0 +1,25 @@
+{
+  "description": "Represents an existing bay model",
+  "allOf": [
+    {
+      "$ref": "NewBayModel.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "#/definitions/uuid"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/updatedAt"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        },
+        "created_at": {
+          "$ref": "#/definitions/createdAt"
+        }
+      }
+    }
+  ]
+}
