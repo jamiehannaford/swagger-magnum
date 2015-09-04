@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "description": "Represents a new pod.",
+  "properties": {
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "desc": {
+      "$ref": "#/definitions/desc"
+    },
+    "uuid": {
+      "$ref": "#/definitions/uuid"
+    },
+    "bay_uuid": {
+      "$ref": "#/definitions/bay_uuid"
+    },
+    "images": {
+      "$ref": "#/definitions/images"
+    },
+    "labels": {
+      "$ref": "#/definitions/labels"
+    },
+    "status": {
+      "$ref": "#/definitions/status"
+    },
+    "host": {
+      "$ref": "#/definitions/host"
+    }
+    "manifest_url": {
+      "$ref": "#/definitions/manifest_url"
+    },
+    "manifest": {
+      "$ref": "#/definitions/manifest"
+    },
+  }
+}
