@@ -15,6 +15,12 @@
         },
         "links": {
           "$ref": "#/definitions/links"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/updatedAt"
+        },
+        "created_at": {
+          "$ref": "#/definitions/createdAt"
         }
       }
     }
