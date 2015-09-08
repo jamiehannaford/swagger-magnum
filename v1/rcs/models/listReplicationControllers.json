@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "description": "Lists known replication controllers.",
+  "properties": {
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "uuid": {
+      "$ref": "#/definitions/bay_uuid"
+    },
+    "image_id": {
+      "$ref": "#/definitions/images"
+    },
+    "type": {
+      "$ref": "#/definitions/labels"
+    },
+    "ironic_node_id": {
+      "$ref": "#/definitions/replicas"
+    }
+  }
+}

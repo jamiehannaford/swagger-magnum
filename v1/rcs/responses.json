@@ -1,0 +1,54 @@
+{
+  "rcsList": {
+    "description": "Lists the collection of replication controllers.",
+    "schema": {
+      "type": "array",
+      "items": {
+        "$ref": "models/listReplicationControllers.json"
+      }
+    },
+    "examples": {
+      "application/json": {
+        "rcs": [
+          {
+            "uuid": "3062dbc5-0e1c-4a86-81e4-585fb62b6e9f",
+            "name": "Redis replication controller example"
+          }
+        ]
+        
+      }
+    }
+  },
+  "rcsCreate": {
+    "description": "A representation of the created replication controller",
+    "schema": {
+      "$ref": "models/createReplicationControllers.json"
+    },
+    "examples": {
+      "application/json": {
+        "ironic_node_id": null,
+        "uuid": "69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
+        "links": [{"href": "http://104.239.228.18:9511/v1/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3", "rel": "self"},
+        {"href": "http://104.239.228.18:9511/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
+        "rel": "bookmark"}],
+        "created_at": "2015-09-04T19:11:54.313069+00:00",
+        "updated_at": null,
+        "image_id": null,
+        "type": null}
+      }
+    }
+  },
+  "NotFound": {
+    "description": "Entity was not found"
+  },
+  "MalformedBody": {
+    "description": "The request contained a malformed JSON body"
+  },
+  "NoContent": {
+    "description": "The request was accepted for processing"
+  },
+  "BaseError": {
+    "description": "An unexpected error occurred"
+  }
+}
+
