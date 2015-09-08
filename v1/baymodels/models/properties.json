@@ -82,27 +82,6 @@
     "minLength": 1,
     "maxLength": 255
   },
-  "links": {
-    "description": "A list containing a self link and associated baymodel links",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "properties": {
-        "href": {
-          "type": "string",
-          "description": "The url of a link."
-        },
-        "rel": {
-          "type": "string",
-          "description": "The name of a link."
-        },
-        "type": {
-          "type": "string",
-          "description": "Indicates the type of document/link."
-        }
-      }
-    }
-  },
   "httpProxy": {
     "description": "http_proxy for the bay",
     "type": "string",

@@ -3,19 +3,19 @@
   "description": "Represents a bay model, but with partial information",
   "properties": {
     "uuid": {
-      "$ref": "#/definitions/uuid"
+      "$ref": "properties.json#/uuid"
     },
     "name": {
-      "$ref": "#/definitions/name"
+      "$ref": "properties.json#/name"
     },
     "coe": {
-      "$ref": "#/definitions/coe"
+      "$ref": "properties.json#/coe"
     },
     "image_id": {
-      "$ref": "#/definitions/imageId"
+      "$ref": "properties.json#/imageId"
     },
     "apiserver_port": {
-      "$ref": "#/definitions/apiServerPort"
+      "$ref": "properties.json#/apiServerPort"
     }
   }
 }

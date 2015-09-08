@@ -5,20 +5,23 @@
       "responses": {
         "200": {
           "$ref": "responses.json#/BayModelList"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
         }
       },
       "parameters": [
         {
-          "$ref": "parameters.json#/marker"
+          "$ref": "../common/parameters.json#/marker"
         },
         {
-          "$ref": "parameters.json#/limit"
+          "$ref": "../common/parameters.json#/limit"
         },
         {
-          "$ref": "parameters.json#/sortKey"
+          "$ref": "../common/parameters.json#/sortKey"
         },
         {
-          "$ref": "parameters.json#/sortDir"
+          "$ref": "../common/parameters.json#/sortDir"
         }
       ]
     },
@@ -32,13 +35,16 @@
           }
         },
         "400": {
-          "description": "Indicates that the JSON payload provided does not pass validation. A required property could be missing, or a type is incorrect."
+          "$ref": "../common/responses.json#/MalformedBody"
         },
         "404": {
-          "description": "Indicates that one of the entities referenced in your JSON payload does not exist"
+          "$ref": "../common/responses.json#/NotFound"
         },
         "409": {
-          "description": "Indicates a conflict, possibly because an entity already exists for the given name"
+          "$ref": "../common/responses.json#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
         }
       },
       "parameters": [
@@ -59,6 +65,9 @@
       "responses": {
         "200": {
           "$ref": "responses.json#/BayModelListDetailed"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
         }
       },
       "parameters": [
@@ -101,10 +110,13 @@
           "$ref": "responses.json#/SingleBayModel"
         },
         "404": {
-          "$ref": "responses.json#/NotFound"
+          "$ref": "../common/responses.json#/NotFound"
         },
         "409": {
-          "description": "A conflict occurred, most likely because there are multiple bay models for the given identifier."
+          "$ref": "../common/responses.json#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
         }
       }
     },
@@ -125,10 +137,13 @@
           "$ref": "responses.json#/SingleBayModel"
         },
         "400": {
-          "$ref": "responses.json#/MalformedBody"
+          "$ref": "../common/responses.json#/MalformedBody"
         },
         "404": {
-          "$ref": "responses.json#/NotFound"
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
         }
       }
     },
@@ -139,10 +154,10 @@
           "$ref": "responses.json#/NoContent",
         },
         "404": {
-          "$ref": "responses.json#/NotFound"
+          "$ref": "../common/responses.json#/NotFound"
         },
         "default": {
-          "$ref": "responses.json#/BaseError"
+          "$ref": "../common/responses.json#/BaseError"
         }
       }
     }

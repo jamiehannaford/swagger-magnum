@@ -8,16 +8,16 @@
       "type": "object",
       "properties": {
         "uuid": {
-          "$ref": "#/definitions/uuid"
+          "$ref": "properties.json#/uuid"
         },
         "updated_at": {
-          "$ref": "#/definitions/updatedAt"
+          "$ref": "properties.json#/updatedAt"
         },
         "links": {
-          "$ref": "#/definitions/links"
+          "$ref": "properties.json#/links"
         },
         "created_at": {
-          "$ref": "#/definitions/createdAt"
+          "$ref": "properties.json#/createdAt"
         }
       }
     }

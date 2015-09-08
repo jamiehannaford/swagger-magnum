@@ -85,17 +85,5 @@
         "updated_at": "2015-09-04 10:44:40.885958"
       }
     }
-  },
-  "NotFound": {
-    "description": "Entity was not found"
-  },
-  "MalformedBody": {
-    "description": "The request contained a malformed JSON body"
-  },
-  "NoContent": {
-    "description": "The request was accepted for processing"
-  },
-  "BaseError": {
-    "description": "An unexpected error occurred"
   }
 }

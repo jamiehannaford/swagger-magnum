@@ -3,52 +3,52 @@
   "description": "Represents a new bay model about to be created",
   "properties": {
     "name": {
-      "$ref": "#/definitions/name"
+      "$ref": "properties.json#/name"
     },
     "coe": {
-      "$ref": "#/definitions/coe"
+      "$ref": "properties.json#/coe"
     },
     "image_id": {
-      "$ref": "#/definitions/imageId"
+      "$ref": "properties.json#/imageId"
     },
     "flavor_id": {
-      "$ref": "#/definitions/flavorId"
+      "$ref": "properties.json#/flavorId"
     },
     "master_flavor_id": {
-      "$ref": "#/definitions/masterFlavorId"
+      "$ref": "properties.json#/masterFlavorId"
     },
     "dns_nameserver": {
-      "$ref": "#/definitions/dnsNameserver"
+      "$ref": "properties.json#/dnsNameserver"
     },
     "keypair_id": {
-      "$ref": "#/definitions/keypairId"
+      "$ref": "properties.json#/keypairId"
     },
     "external_network_id": {
-      "$ref": "#/definitions/externalNetworkId"
+      "$ref": "properties.json#/externalNetworkId"
     },
     "fixed_network": {
-      "$ref": "#/definitions/fixedNetwork"
+      "$ref": "properties.json#/fixedNetwork"
     },
     "apiserver_port": {
-      "$ref": "#/definitions/apiServerPort"
+      "$ref": "properties.json#/apiServerPort"
     },
     "docker_volume_size": {
-      "$ref": "#/definitions/dockerVolumeSize"
+      "$ref": "properties.json#/dockerVolumeSize"
     },
     "ssh_authorized_key": {
-      "$ref": "#/definitions/sshAuthorizedKey"
+      "$ref": "properties.json#/sshAuthorizedKey"
     },
     "cluster_distro": {
-      "$ref": "#/definitions/clusterDistro"
+      "$ref": "properties.json#/clusterDistro"
     },
     "http_proxy": {
-      "$ref": "#/definitions/httpProxy"
+      "$ref": "properties.json#/httpProxy"
     },
     "https_proxy": {
-      "$ref": "#/definitions/httpsProxy"
+      "$ref": "properties.json#/httpsProxy"
     },
     "no_proxy": {
-      "$ref": "#/definitions/noProxy"
+      "$ref": "properties.json#/noProxy"
     }
   }
 }
