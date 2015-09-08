@@ -1,0 +1,40 @@
+{
+  "description": "",
+  "allOf": [
+    {
+      "$ref": "createPods.json"
+    },
+    {
+      "$ref": "listPods.json"
+    },
+    {
+      "$ref": "updatePods.json"
+    },
+    {
+      "$ref": "listPods.json"
+    },
+    {
+      "$ref": "deletePods.json"
+    }
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "#/definitions/uuid"
+        },
+        "name": {
+          "$ref": "#/definitions/name"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/updatedAt"
+        },
+        "created_at": {
+          "$ref": "#/definitions/createdAt"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "description": "",
+  "allOf": [
+    {
+      "$ref": "createNodes.json"
+    },
+    {
+      "$ref": "listNodes.json"
+    },
+    {
+      "$ref": "updateNodes.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "#/definitions/uuid"
+        },
+        "image-id": {
+          "$ref": "#/definitions/image-id"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/updatedAt"
+        },
+        "created_at": {
+          "$ref": "#/definitions/createdAt"
+        }
+      }
+    }
+  ]
+}

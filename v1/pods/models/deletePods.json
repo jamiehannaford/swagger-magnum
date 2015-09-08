@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "description": "Deletes a named pod.",
+  "properties": {
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "uuid": {
+      "$ref": "#/definitions/uuid"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Updates an existing node.",
+  "allOf": [
+    {
+      "$ref": "createNodes.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "image_id": {
+          "$ref": "#/definitions/image_id"
+        }
+      }
+    }
+  ]
+}
