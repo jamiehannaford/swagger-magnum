@@ -1,0 +1,165 @@
+{
+  "bays": {
+    "get": {
+      "description": "Retrieve a list of bays",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/BayList"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "../common/parameters.json#/marker"
+        },
+        {
+          "$ref": "../common/parameters.json#/limit"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortKey"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortDir"
+        }
+      ]
+    },
+    "post": {
+      "description": "Create a new bay",
+      "responses": {
+        "201": {
+          "description": "Indicates a successful creation",
+          "schema": {
+            "$ref": "models/Bay.json"
+          }
+        },
+        "400": {
+          "$ref": "../common/responses.json#/MalformedBody"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses.json#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "name": "json",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "models/BayCreate.json"
+          }
+        }
+      ]
+    }
+  },
+  "baysDetail": {
+    "get": {
+      "description": "Retrieve a list of bays with detailed information",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/BayListDetailed"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses.json#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "name": "bay_uuid",
+          "in": "query",
+          "description": "Allows filtering the collection according to UUID",
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "$ref": "../common/parameters.json#/marker"
+        },
+        {
+          "$ref": "../common/parameters.json#/limit"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortKey"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortDir"
+        }
+      ]
+    }
+  },
+  "baysIdentifier": {
+    "parameters": [
+      {
+        "name": "identifier",
+        "description": "UUID or logical name of the bay.",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "get": {
+      "description": "Retrieve information about the given bay.",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/SingleBay"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses.json#/Conflict"
+        }
+      }
+    },
+    "patch": {
+      "description": "Update an existing bay.",
+      "parameters": [
+        {
+          "name": "jsonPatchDoc",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "../common/jsonPath.json"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/SingleBay"
+        },
+        "400": {
+          "$ref": "../common/responses.json#/MalformedBody"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        }
+      }
+    },
+    "delete": {
+      "description": "Permanently deletes a given bay",
+      "responses": {
+        "204": {
+          "$ref": "../common/responses.json#/NoContent",
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      }
+    }
+  }
+}
