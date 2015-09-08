@@ -1,0 +1,33 @@
+{
+  "uuid": {
+    "type": "string",
+    "description": "Unique UUID for this container",
+    "format": "uuid"
+  },
+  "name": {
+    "description": "Name of this container",
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 255
+  },
+  "bay_uuid": {
+    "type": "string",
+    "description": "Unique UUID of the bay this runs on",
+    "format": "uuid"
+  },
+  "ca_cert": {
+    "description": "The CA certificate",
+    "type": "string",
+    "minimumLength": 1
+  },
+  "private_key": {
+    "description": "The private key",
+    "type": "string",
+    "minimumLength": 1
+  },
+  "certificate": {
+    "description": "The certificate",
+    "type": "string",
+    "minimumLength": 1
+  }
+}

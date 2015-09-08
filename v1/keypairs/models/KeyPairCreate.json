@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "description": "Represents a new keypair that will be created",
+  "properties": {
+    "name": {
+      "$ref": "properties.json#/name"
+    },
+    "bay_uuid": {
+      "$ref": "properties.json#/bay_uuid"
+    },
+    "ca_cert": {
+      "$ref": "properties.json#/status"
+    },
+    "certificate": {
+      "$ref": "properties.json#/certificate"
+    },
+    "private_key": {
+      "$ref": "properties.json#/private_key"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "description": "Represents an existing keypair in a collection",
+  "properties": {
+    "uuid": {
+      "$ref": "properties.json#/uuid"
+    },
+    "name": {
+      "$ref": "properties.json#/name"
+    },
+    "bay_uuid": {
+      "$ref": "properties.json#/bay_uuid"
+    },
+    "ca_cert": {
+      "$ref": "properties.json#/status"
+    },
+    "certificate": {
+      "$ref": "properties.json#/certificate"
+    },
+    "private_key": {
+      "$ref": "properties.json#/private_key"
+    }
+  }
+}
