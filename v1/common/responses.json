@@ -1,0 +1,17 @@
+{
+  "NotFound": {
+    "description": "Entity was not found"
+  },
+  "MalformedBody": {
+    "description": "The request contained a malformed JSON body"
+  },
+  "NoContent": {
+    "description": "The request was accepted for processing"
+  },
+  "BaseError": {
+    "description": "An unexpected error occurred"
+  },
+  "Conflict": {
+    "description": "A conflict occurred. This is usually because you specified a name that is set for multiple entities."
+  }
+}

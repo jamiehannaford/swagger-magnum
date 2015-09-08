@@ -1,0 +1,30 @@
+{
+  "uuid": {
+    "type": "string",
+    "description": "Unique UUID for this container",
+    "format": "uuid"
+  },
+  "name": {
+    "description": "Name of this container",
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 255
+  },
+  "image": {
+    "description": "The image name or ID to use as a base image for this container",
+    "type": "string"
+  },
+  "bay_uuid": {
+    "type": "string",
+    "description": "Unique UUID of the bay this runs on",
+    "format": "uuid"
+  },
+  "command": {
+    "description": "The command to execute when container starts",
+    "type": "string"
+  },
+  "status": {
+    "description": "The status of container",
+    "type": "string"
+  }
+}

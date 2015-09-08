@@ -1,0 +1,332 @@
+{
+  "containers": {
+    "get": {
+      "description": "Retrieve a list of containers",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/ContainerList"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "../common/parameters.json#/marker"
+        },
+        {
+          "$ref": "../common/parameters.json#/limit"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortKey"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortDir"
+        }
+      ]
+    },
+    "post": {
+      "description": "Create a new container",
+      "responses": {
+        "201": {
+          "description": "Indicates a successful creation",
+          "schema": {
+            "$ref": "models/Container.json"
+          }
+        },
+        "400": {
+          "$ref": "../common/responses.json#/MalformedBody"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses.json#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "name": "json",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "models/ContainerCreate.json"
+          }
+        }
+      ]
+    }
+  },
+  "containersDetail": {
+    "get": {
+      "description": "Retrieve a list of containers with detailed information",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/ContainerListDetailed"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses.json#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "name": "container_uuid",
+          "in": "query",
+          "description": "Allows filtering the collection according to UUID",
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "$ref": "../common/parameters.json#/marker"
+        },
+        {
+          "$ref": "../common/parameters.json#/limit"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortKey"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortDir"
+        }
+      ]
+    }
+  },
+  "containersIdentifier": {
+    "parameters": [
+      {
+        "$ref": "parameters.json#/identifier"
+      }
+    ],
+    "get": {
+      "description": "Retrieve information about the given container.",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/Container"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses.json#/Conflict"
+        }
+      }
+    },
+    "patch": {
+      "description": "Update an existing container.",
+      "parameters": [
+        {
+          "name": "jsonPatchDoc",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "../common/jsonPath.json"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/Container"
+        },
+        "400": {
+          "$ref": "../common/responses.json#/MalformedBody"
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        }
+      }
+    },
+    "delete": {
+      "description": "Permanently deletes a given container",
+      "responses": {
+        "204": {
+          "$ref": "../common/responses.json#/NoContent",
+        },
+        "404": {
+          "$ref": "../common/responses.json#/NotFound"
+        },
+        "default": {
+          "$ref": "../common/responses.json#/BaseError"
+        }
+      }
+    }
+  },
+  "containersStart": {
+    "put": {
+      "description": "Starts the container",
+      "responses": {
+        "200": {
+          "description": "Indicates a successful action"
+        },
+        "404": {
+          "$ref": "../common/responses#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/identifier"
+        }
+      ]
+    }
+  },
+  "containersStop": {
+    "put": {
+      "description": "Stop the container",
+      "responses": {
+        "200": {
+          "description": "Indicates a successful action"
+        },
+        "404": {
+          "$ref": "../common/responses#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/identifier"
+        }
+      ]
+    }
+  },
+  "containersPause": {
+    "put": {
+      "description": "Pauses the container",
+      "responses": {
+        "200": {
+          "description": "Indicates a successful action"
+        },
+        "404": {
+          "$ref": "../common/responses#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/identifier"
+        }
+      ]
+    }
+  },
+  "containersUnpause": {
+    "put": {
+      "description": "Unpauses the container",
+      "responses": {
+        "200": {
+          "description": "Indicates a successful action"
+        },
+        "404": {
+          "$ref": "../common/responses#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/identifier"
+        }
+      ]
+    }
+  },
+  "containersReboot": {
+    "put": {
+      "description": "Reboots the container",
+      "responses": {
+        "200": {
+          "description": "Indicates a successful action"
+        },
+        "404": {
+          "$ref": "../common/responses#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/identifier"
+        }
+      ]
+    }
+  },
+  "containersLogs": {
+    "put": {
+      "description": "Retrieves the logs for the container",
+      "responses": {
+        "200": {
+          "description": "Indicates a successful action"
+        },
+        "404": {
+          "$ref": "../common/responses#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/identifier"
+        }
+      ]
+    }
+  },
+  "containersExecute": {
+    "put": {
+      "description": "Executes an arbitrary command inside the container",
+      "responses": {
+        "200": {
+          "description": "Indicates a successful action"
+        },
+        "404": {
+          "$ref": "../common/responses#/NotFound"
+        },
+        "409": {
+          "$ref": "../common/responses#/Conflict"
+        },
+        "default": {
+          "$ref": "../common/responses#/BaseError"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/identifier"
+        },
+        {
+          "$ref": "parameters.json#/execute"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "description": "Represents a new container to be created",
+  "required": ["bay_uuid"],
+  "properties": {
+    "name": {
+      "$ref": "properties.json#/name"
+    },
+    "image": {
+      "$ref": "properties.json#/image"
+    },
+    "command": {
+      "$ref": "properties.json#/command"
+    },
+    "bay_uuid": {
+      "$ref": "properties.json#/bay_uuid"
+    }
+  }
+}
