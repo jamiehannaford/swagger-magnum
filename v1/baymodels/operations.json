@@ -151,7 +151,7 @@
       "description": "Permanently deletes a given bay model",
       "responses": {
         "204": {
-          "$ref": "responses.json#/NoContent",
+          "$ref": "responses.json#/NoContent"
         },
         "404": {
           "$ref": "../common/responses.json#/NotFound"
