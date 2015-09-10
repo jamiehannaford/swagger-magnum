@@ -23,8 +23,7 @@
       ]
     },
     "post": {
-      "description": "Create a new node, either virtual (virt)
-      or bare metal (bare).",
+      "description": "Create a new replication controller.",
       "responses": {
         "201": {
           "description": "Indicates successful creation.",
@@ -85,33 +84,10 @@
       ]
     }
   },
-  "rcsIdentifier": {
-    "parameters": [
-      {
-        "name": "identifier",
-        "description": "UUID or logical name of a virtual node. A bare
-        metal node has an identifier associated with an ironic_id.",
-        "in": "path",
-        "required": true,
-        "type": "string"
-      }
-    ],
-    "imageIdentifier": {
-      "parameters": [
-        {
-        "name": "identifier",
-        "description": "UUID or logical name of a virtual node. A bare
-        metal node has an identifier associated with an ironic_id.",
-        "in": "path",
-        "required": true,
-        "type": "string"
-      }
-      ]
-    },
     "patch": {
-      "description": "Update an existing node.",
+      "description": "Update an existing replication controller.",
       "parameters": [
-        {"name": "node_uuid",
+        {"name": "image_uuid",
         "in": "body",
         "required": true,
         },

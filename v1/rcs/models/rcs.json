@@ -17,7 +17,7 @@
           "$ref": "#/definitions/uuid"
         },
         "image-id": {
-          "$ref": "#/definitions/image-id"
+          "$ref": "#/definitions/images"
         },
         "links": {
           "$ref": "#/definitions/links"

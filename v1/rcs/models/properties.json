@@ -1,29 +1,37 @@
 {
   "uuid": {
     "type": "uuid",
-    "description": "Unique UUID for this node.",
+    "description": "Unique UUID for this replication controller.",
     "format": "uuid"
   },
-  "type": {
+  "name": {
     "type": "string",
-    "description": "Type of this node, virt or bare
-    to indicate virtual or bare metal (ironic).",
+    "description": "Name of the replication controller.",
     "minLength": 1,
     "maxLength": 255
   },
-  "image_id": {
+  "images": {
     "type": "string",
-    "description": "The image name or UUID to use as a base image for this node.",
+    "description": "A list of images used by containers in this
+    replication controller.",
     "minLength": 1,
-    "maxLength": 255,
-    "required": true
+    "maxLength": 255
   },
-  "ironic_node_id": {
+  "bay_uuid": {
+    "type": "uuid",
+    "description": "Unique UUID for the bay for the replication controllers.",
+    "format": "uuid"
+    },
+  "replicas": {
+    "type": "integer",
+    "description": "Number of replicas of this replication controller.",
+    "readonly": true
+  },
+  "labels": {
     "type": "string",
-    "description": "The bare metal (ironic) node ID associated with this node.",
+    "description": "A label for the replication controller.",
     "minLength": 1,
-    "maxLength": 255,
-    "required": true
+    "maxLength": 255
   },
   "links": {
     "description": "A list containing a self link and associated links.",

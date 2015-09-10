@@ -1,14 +1,14 @@
 {
-  "description": "Updates an existing node.",
+  "description": "Updates an existing replication controller.",
   "allOf": [
     {
-      "$ref": "createNodes.json"
+      "$ref": "createReplicationControllers.json"
     },
     {
       "type": "object",
       "properties": {
         "image_id": {
-          "$ref": "#/definitions/image_id"
+          "$ref": "#/definitions/images"
         }
       }
     }
