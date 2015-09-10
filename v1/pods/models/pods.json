@@ -20,19 +20,19 @@
       "type": "object",
       "properties": {
         "uuid": {
-          "$ref": "#/definitions/uuid"
+          "$ref": "properties.json#/uuid"
         },
         "name": {
-          "$ref": "#/definitions/name"
+          "$ref": "properties.json#/name"
         },
         "links": {
-          "$ref": "#/definitions/links"
+          "$ref": "properties.json#/links"
         },
         "updated_at": {
-          "$ref": "#/definitions/updatedAt"
+          "$ref": "properties.json#/updatedAt"
         },
         "created_at": {
-          "$ref": "#/definitions/createdAt"
+          "$ref": "properties.json#/createdAt"
         }
       }
     }

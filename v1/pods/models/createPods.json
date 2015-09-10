@@ -3,34 +3,34 @@
   "description": "Represents a new pod.",
   "properties": {
     "name": {
-      "$ref": "#/definitions/name"
+      "$ref": "properties.json#/name"
     },
     "desc": {
-      "$ref": "#/definitions/desc"
+      "$ref": "properties.json#/desc"
     },
     "uuid": {
-      "$ref": "#/definitions/uuid"
+      "$ref": "properties.json#/uuid"
     },
     "bay_uuid": {
-      "$ref": "#/definitions/bay_uuid"
+      "$ref": "properties.json#/bay_uuid"
     },
     "images": {
-      "$ref": "#/definitions/images"
+      "$ref": "properties.json#/images"
     },
     "labels": {
-      "$ref": "#/definitions/labels"
+      "$ref": "properties.json#/labels"
     },
     "status": {
-      "$ref": "#/definitions/status"
+      "$ref": "properties.json#/status"
     },
     "host": {
-      "$ref": "#/definitions/host"
+      "$ref": "properties.json#/host"
     }
     "manifest_url": {
-      "$ref": "#/definitions/manifest_url"
+      "$ref": "properties.json#/manifest_url"
     },
     "manifest": {
-      "$ref": "#/definitions/manifest"
+      "$ref": "properties.json#/manifest"
     },
   }
 }

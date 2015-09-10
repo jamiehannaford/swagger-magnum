@@ -3,10 +3,10 @@
   "description": "Deletes a named pod.",
   "properties": {
     "name": {
-      "$ref": "#/definitions/name"
+      "$ref": "properties.json#/name"
     },
     "uuid": {
-      "$ref": "#/definitions/uuid"
+      "$ref": "properties.json#/uuid"
     }
   }
 }

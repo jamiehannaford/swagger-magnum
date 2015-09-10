@@ -3,19 +3,19 @@
   "description": "Lists known replication controllers.",
   "properties": {
     "name": {
-      "$ref": "#/definitions/name"
+      "$ref": "properties.json#/name"
     },
     "uuid": {
-      "$ref": "#/definitions/bay_uuid"
+      "$ref": "properties.json#/bay_uuid"
     },
     "image_id": {
-      "$ref": "#/definitions/images"
+      "$ref": "properties.json#/images"
     },
     "type": {
-      "$ref": "#/definitions/labels"
+      "$ref": "properties.json#/labels"
     },
     "ironic_node_id": {
-      "$ref": "#/definitions/replicas"
+      "$ref": "properties.json#/replicas"
     }
   }
 }

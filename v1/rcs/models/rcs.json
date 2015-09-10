@@ -14,19 +14,19 @@
       "type": "object",
       "properties": {
         "uuid": {
-          "$ref": "#/definitions/uuid"
+          "$ref": "properties.json#/uuid"
         },
         "image-id": {
-          "$ref": "#/definitions/images"
+          "$ref": "properties.json#/images"
         },
         "links": {
-          "$ref": "#/definitions/links"
+          "$ref": "properties.json#/links"
         },
         "updated_at": {
-          "$ref": "#/definitions/updatedAt"
+          "$ref": "properties.json#/updatedAt"
         },
         "created_at": {
-          "$ref": "#/definitions/createdAt"
+          "$ref": "properties.json#/createdAt"
         }
       }
     }
