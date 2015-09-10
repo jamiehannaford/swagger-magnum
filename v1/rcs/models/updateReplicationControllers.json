@@ -1,0 +1,16 @@
+{
+  "description": "Updates an existing replication controller.",
+  "allOf": [
+    {
+      "$ref": "createReplicationControllers.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "image_id": {
+          "$ref": "#/definitions/images"
+        }
+      }
+    }
+  ]
+}

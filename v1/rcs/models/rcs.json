@@ -1,0 +1,34 @@
+{
+  "description": "",
+  "allOf": [
+    {
+      "$ref": "createReplicationControllers.json"
+    },
+    {
+      "$ref": "listReplicationControllers.json"
+    },
+    {
+      "$ref": "updateReplicationControllers.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "#/definitions/uuid"
+        },
+        "image-id": {
+          "$ref": "#/definitions/images"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/updatedAt"
+        },
+        "created_at": {
+          "$ref": "#/definitions/createdAt"
+        }
+      }
+    }
+  ]
+}
