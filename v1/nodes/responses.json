@@ -4,7 +4,7 @@
     "schema": {
       "type": "array",
       "items": {
-        "$ref": "models/nodes.json"
+        "$ref": "models/Nodes.json"
       }
     },
     "examples": {
@@ -22,7 +22,7 @@
   "nodeCreate": {
     "description": "A representation of the created node",
     "schema": {
-      "$ref": "models/nodes.json"
+      "$ref": "models/Nodes.json"
     },
     "examples": {
       "application/json": {

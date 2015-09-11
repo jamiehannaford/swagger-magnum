@@ -29,7 +29,7 @@
         "201": {
           "description": "Indicates successful creation.",
           "schema": {
-            "$ref": "models/nodes.json"
+            "$ref": "models/Nodes.json"
           }
         },
         "400": {
