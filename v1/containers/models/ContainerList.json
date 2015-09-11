@@ -1,33 +1,33 @@
 {
-  "type": "object",
-  "description": "Represents a container in a collection listing",
-  "properties": {
-    "uuid": {
-      "$ref": "properties.json#/uuid"
-    },
-    "name": {
-      "$ref": "properties.json#/name"
-    },
-    "image": {
-      "$ref": "properties.json#/image"
-    },
-    "command": {
-      "$ref": "properties.json#/command"
-    },
-    "bay_uuid": {
-      "$ref": "properties.json#/bay_uuid"
-    },
-    "status": {
-      "$ref": "properties.json#/status"
-    },
-    "links": {
-      "$ref": "../../common/properties.json#/links"
-    },
-    "created_at": {
-      "$ref": "../../common/properties.json#/created_at"
-    },
-    "updated_at": {
-      "$ref": "../../common/properties.json#/updated_at"
+    "type": "object",
+    "description": "Represents a container in a collection listing",
+    "properties": {
+        "uuid": {
+            "$ref": "properties.json#/uuid"
+        },
+        "name": {
+            "$ref": "properties.json#/name"
+        },
+        "image": {
+            "$ref": "properties.json#/image"
+        },
+        "command": {
+            "$ref": "properties.json#/command"
+        },
+        "bay_uuid": {
+            "$ref": "properties.json#/bay_uuid"
+        },
+        "status": {
+            "$ref": "properties.json#/status"
+        },
+        "links": {
+            "$ref": "../../common/properties.json#/links"
+        },
+        "created_at": {
+            "$ref": "../../common/properties.json#/created_at"
+        },
+        "updated_at": {
+            "$ref": "../../common/properties.json#/updated_at"
+        }
     }
-  }
 }
