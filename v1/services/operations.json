@@ -1,10 +1,11 @@
 {
-  "nodes": {
+  "rcs": {
     "get": {
-      "description": "Retrieve information about all nodes.",
+      "description": "Retrieve information about all Container Orchestration
+      Engine (COE) services.",
       "responses": {
         "200": {
-          "$ref": "responses.json#/nodesList"
+          "$ref": "responses.json#/List"
         }
       },
       "parameters": [
@@ -23,13 +24,12 @@
       ]
     },
     "post": {
-      "description": "Create a new node, either virtual (virt)
-      or bare metal (bare).",
+      "description": "Create a new replication controller.",
       "responses": {
         "201": {
           "description": "Indicates successful creation.",
           "schema": {
-            "$ref": "models/Nodes.json"
+            "$ref": "models/rcs.json"
           }
         },
         "400": {
@@ -48,18 +48,18 @@
           "in": "body",
           "required": true,
           "schema": {
-            "$ref": "models/createNodes.json"
+            "$ref": "models/createReplicationControllers.json"
           }
         }
       ]
     }
   },
-  "nodesDetail": {
+  "rcsDetail": {
     "get": {
-      "description": "Retrieve a list of nodes with detailed information",
+      "description": "Retrieve a list of replication controllers with detailed information",
       "responses": {
         "200": {
-          "$ref": "responses.json#/nodesListDetailed"
+          "$ref": "responses.json#/ReplicationControllersListDetailed"
         }
       },
       "parameters": [
@@ -85,33 +85,10 @@
       ]
     }
   },
-  "nodesIdentifier": {
-    "parameters": [
-      {
-        "name": "identifier",
-        "description": "UUID or logical name of a virtual node. A bare
-        metal node has an identifier associated with an ironic_id.",
-        "in": "path",
-        "required": true,
-        "type": "string"
-      }
-    ],
-    "imageIdentifier": {
-      "parameters": [
-        {
-        "name": "identifier",
-        "description": "UUID or logical name of a virtual node. A bare
-        metal node has an identifier associated with an ironic_id.",
-        "in": "path",
-        "required": true,
-        "type": "string"
-      }
-      ]
-    },
     "patch": {
-      "description": "Update an existing node.",
+      "description": "Update an existing replication controller.",
       "parameters": [
-        {"name": "node_uuid",
+        {"name": "image_uuid",
         "in": "body",
         "required": true,
         },

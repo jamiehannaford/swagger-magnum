@@ -1,32 +1,31 @@
 {
-  "nodeList": {
-    "description": "Lists the collection of nodes.",
+  "rcsList": {
+    "description": "Lists the collection of services.",
     "schema": {
       "type": "array",
       "items": {
-        "$ref": "models/Nodes.json"
+        "$ref": "models/listServices.json"
       }
     },
     "examples": {
       "application/json": {
-        "nodes": [
+        "service": [
           {
-            "image_id": "Fedora",
-            "type": "example"
+            "uuid": "3062dbc5-0e1c-4a86-81e4-585fb62b6e9f",
+            "name": "Docker Swarm example"
           }
         ]
         
       }
     }
   },
-  "nodeCreate": {
-    "description": "A representation of the created node",
+  "rcsCreate": {
+    "description": "A representation of the created services.",
     "schema": {
-      "$ref": "models/Nodes.json"
+      "$ref": "models/createReplicationControllers.json"
     },
     "examples": {
       "application/json": {
-        "ironic_node_id": null,
         "uuid": "69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
         "links": [{"href": "http://104.239.228.18:9511/v1/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3", "rel": "self"},
         {"href": "http://104.239.228.18:9511/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
@@ -51,3 +50,4 @@
     "description": "An unexpected error occurred"
   }
 }
+

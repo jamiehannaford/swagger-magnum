@@ -8,7 +8,7 @@
       "type": "object",
       "properties": {
         "image_id": {
-          "$ref": "#/definitions/images"
+          "$ref": "properties.json#/images"
         }
       }
     }

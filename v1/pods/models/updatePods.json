@@ -8,10 +8,10 @@
       "type": "object",
       "properties": {
         "uuid": {
-          "$ref": "#/definitions/uuid"
+          "$ref": "properties.json#/uuid"
         },
         "links": {
-          "$ref": "#/definitions/links"
+          "$ref": "properties.json#/links"
         }
       }
     }

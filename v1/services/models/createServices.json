@@ -1,6 +1,8 @@
 {
   "type": "object",
-  "description": "Represents a new replication controller (RCS).",
+  "description": "Represents a new Container Orchestration Engine (COE)
+   service. The available services are Google Kubernetes, Apache Mesos, and
+   Docker Swarm.",
   "properties": {
     "name": {
       "$ref": "properties.json#/name"
@@ -13,9 +15,6 @@
     },
     "type": {
       "$ref": "properties.json#/type"
-    },
-    "ironic_node_id": {
-      "$ref": "properties.json#/ironic_node_id"
     }
   }
 }

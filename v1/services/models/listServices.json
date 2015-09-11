@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Lists known replication controllers.",
+  "description": "Lists known Controller Orchestration Engine (COE) services.",
   "properties": {
     "name": {
       "$ref": "properties.json#/name"

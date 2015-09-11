@@ -2,22 +2,19 @@
   "description": "",
   "allOf": [
     {
-      "$ref": "createReplicationControllers.json"
+      "$ref": "createServices.json"
     },
     {
-      "$ref": "listReplicationControllers.json"
+      "$ref": "listServices.json"
     },
     {
-      "$ref": "updateReplicationControllers.json"
+      "$ref": "updateServices.json"
     },
     {
       "type": "object",
       "properties": {
         "uuid": {
-          "$ref": "properties.json#/uuid"
-        },
-        "image-id": {
-          "$ref": "properties.json#/images"
+          "$ref": "properties.json#/bay_uuid"
         },
         "links": {
           "$ref": "properties.json#/links"

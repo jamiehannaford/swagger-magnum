@@ -3,19 +3,19 @@
   "description": "Represents a new node.",
   "properties": {
     "name": {
-      "$ref": "#/definitions/name"
+      "$ref": "properties.json#/name"
     },
     "uuid": {
-      "$ref": "#/definitions/uuid"
+      "$ref": "properties.json#/uuid"
     },
     "image_id": {
-      "$ref": "#/definitions/image_id"
+      "$ref": "properties.json#/image_id"
     },
     "type": {
-      "$ref": "#/definitions/type"
+      "$ref": "properties.json#/type"
     },
     "ironic_node_id": {
-      "$ref": "#/definitions/ironic_node_id"
+      "$ref": "properties.json#/ironic_node_id"
     }
   }
 }
