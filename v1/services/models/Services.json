@@ -1,0 +1,31 @@
+{
+  "description": "",
+  "allOf": [
+    {
+      "$ref": "createServices.json"
+    },
+    {
+      "$ref": "listServices.json"
+    },
+    {
+      "$ref": "updateServices.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "properties.json#/bay_uuid"
+        },
+        "links": {
+          "$ref": "properties.json#/links"
+        },
+        "updated_at": {
+          "$ref": "properties.json#/updatedAt"
+        },
+        "created_at": {
+          "$ref": "properties.json#/createdAt"
+        }
+      }
+    }
+  ]
+}

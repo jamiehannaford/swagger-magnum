@@ -1,0 +1,131 @@
+{
+  "rcs": {
+    "get": {
+      "description": "Retrieve information about all Container Orchestration
+      Engine (COE) services.",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/List"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/marker"
+        },
+        {
+          "$ref": "parameters.json#/limit"
+        },
+        {
+          "$ref": "parameters.json#/sortKey"
+        },
+        {
+          "$ref": "parameters.json#/sortDir"
+        }
+      ]
+    },
+    "post": {
+      "description": "Create a new replication controller.",
+      "responses": {
+        "201": {
+          "description": "Indicates successful creation.",
+          "schema": {
+            "$ref": "models/rcs.json"
+          }
+        },
+        "400": {
+          "description": "Indicates that the JSON payload provided does not pass validation. A required property could be missing, or a type is incorrect."
+        },
+        "404": {
+          "description": "Indicates that one of the entities referenced in your JSON payload does not exist."
+        },
+        "409": {
+          "description": "Indicates a conflict, possibly because an entity already exists for the given name."
+        }
+      },
+      "parameters": [
+        {
+          "name": "json",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "models/createReplicationControllers.json"
+          }
+        }
+      ]
+    }
+  },
+  "rcsDetail": {
+    "get": {
+      "description": "Retrieve a list of replication controllers with detailed information",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/ReplicationControllersListDetailed"
+        }
+      },
+      "parameters": [
+        {
+          "name": "node_uuid",
+          "in": "query",
+          "description": "Allows filtering the collection according to UUID",
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "$ref": "parameters.json#/marker"
+        },
+        {
+          "$ref": "parameters.json#/limit"
+        },
+        {
+          "$ref": "parameters.json#/sortKey"
+        },
+        {
+          "$ref": "parameters.json#/sortDir"
+        }
+      ]
+    }
+  },
+    "patch": {
+      "description": "Update an existing replication controller.",
+      "parameters": [
+        {"name": "image_uuid",
+        "in": "body",
+        "required": true,
+        },
+        {
+          "name": "jsonPatchDoc",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "../common/jsonPath.json"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/"
+        },
+        "400": {
+          "$ref": "responses.json#/MalformedBody"
+        },
+        "404": {
+          "$ref": "responses.json#/NotFound"
+        }
+      }
+    },
+    "delete": {
+      "description": "Permanently deletes a given node",
+      "responses": {
+        "204": {
+          "$ref": "responses.json#/NoContent",
+        },
+        "404": {
+          "$ref": "responses.json#/NotFound"
+        },
+        "default": {
+          "$ref": "responses.json#/BaseError"
+        }
+      }
+    }
+  }
+}

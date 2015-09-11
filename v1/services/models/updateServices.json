@@ -1,0 +1,17 @@
+{
+  "description": "Updates an existing Container Orchestration Engine (COE)
+    service.",
+  "allOf": [
+    {
+      "$ref": "createServices.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "image_id": {
+          "$ref": "properties.json#/bay_uuid"
+        }
+      }
+    }
+  ]
+}

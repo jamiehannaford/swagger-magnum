@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "description": "Lists known Controller Orchestration Engine (COE) services.",
+  "properties": {
+    "name": {
+      "$ref": "properties.json#/name"
+    },
+    "uuid": {
+      "$ref": "properties.json#/bay_uuid"
+    },
+    "image_id": {
+      "$ref": "properties.json#/images"
+    },
+    "type": {
+      "$ref": "properties.json#/labels"
+    },
+    "ironic_node_id": {
+      "$ref": "properties.json#/replicas"
+    }
+  }
+}
