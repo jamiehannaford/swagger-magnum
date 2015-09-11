@@ -1,21 +1,21 @@
 {
-  "type": "object",
-  "description": "Represents a bay model, but with partial information",
-  "properties": {
-    "uuid": {
-      "$ref": "properties.json#/uuid"
-    },
-    "name": {
-      "$ref": "properties.json#/name"
-    },
-    "coe": {
-      "$ref": "properties.json#/coe"
-    },
-    "image_id": {
-      "$ref": "properties.json#/imageId"
-    },
-    "apiserver_port": {
-      "$ref": "properties.json#/apiServerPort"
+    "type": "object",
+    "description": "Represents a bay model, but with partial information",
+    "properties": {
+        "uuid": {
+            "$ref": "properties.json#/uuid"
+        },
+        "name": {
+            "$ref": "properties.json#/name"
+        },
+        "coe": {
+            "$ref": "properties.json#/coe"
+        },
+        "image_id": {
+            "$ref": "properties.json#/imageId"
+        },
+        "apiserver_port": {
+            "$ref": "properties.json#/apiServerPort"
+        }
     }
-  }
 }
