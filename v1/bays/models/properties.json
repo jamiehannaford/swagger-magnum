@@ -1,61 +1,61 @@
 {
-  "uuid": {
-    "type": "string",
-    "description": "Unique UUID for this bay",
-    "format": "uuid"
-  },
-  "name": {
-    "type": "string",
-    "description": "The name of the bay",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "bayModelId": {
-    "type": "string",
-    "description": "The bay model UUID",
-    "required": true
-  },
-  "nodeCount": {
-    "type": "integer",
-    "description": "The node count for this bay.",
-    "minimum": 1,
-    "default": 1
-  },
-  "masterCount": {
-    "type": "integer",
-    "description": "The number of master nodes for this bay",
-    "minimum": 1,
-    "default": 1
-  },
-  "bayCreateTimeout": {
-    "type": "integer",
-    "description": "Timeout for creating the bay in minutes. Set to 0 for no timeout",
-    "minimum": 0,
-    "default": 0
-  },
-  "status": {
-    "type": "string",
-    "description": "Status of the bay from the heat stack"
-  },
-  "statusReason": {
-    "type": "string",
-    "description": "Status reason of the bay from the heat stack"
-  },
-  "discoveryUrl": {
-    "type": "string",
-    "description": "URL used for bay node discovery"
-  },
-  "apiAddress": {
-    "type": "string",
-    "description": "API address of cluster master node"
-  },
-  "nodeAddresses": {
-    "type": "array",
-    "description": "List of IP addresses for the cluster slave nodes",
-    "items": {
-      "type": "string",
-      "description": "The IP address of the slave node"
+    "uuid": {
+        "type": "string",
+        "description": "Unique UUID for this bay",
+        "format": "uuid"
     },
-    "uniqueItems": true
-  }
+    "name": {
+        "type": "string",
+        "description": "The name of the bay",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "bayModelId": {
+        "type": "string",
+        "description": "The bay model UUID",
+        "required": true
+    },
+    "nodeCount": {
+        "type": "integer",
+        "description": "The node count for this bay.",
+        "minimum": 1,
+        "default": 1
+    },
+    "masterCount": {
+        "type": "integer",
+        "description": "The number of master nodes for this bay",
+        "minimum": 1,
+        "default": 1
+    },
+    "bayCreateTimeout": {
+        "type": "integer",
+        "description": "Timeout for creating the bay in minutes. Set to 0 for no timeout",
+        "minimum": 0,
+        "default": 0
+    },
+    "status": {
+        "type": "string",
+        "description": "Status of the bay from the heat stack"
+    },
+    "statusReason": {
+        "type": "string",
+        "description": "Status reason of the bay from the heat stack"
+    },
+    "discoveryUrl": {
+        "type": "string",
+        "description": "URL used for bay node discovery"
+    },
+    "apiAddress": {
+        "type": "string",
+        "description": "API address of cluster master node"
+    },
+    "nodeAddresses": {
+        "type": "array",
+        "description": "List of IP addresses for the cluster slave nodes",
+        "items": {
+            "type": "string",
+            "description": "The IP address of the slave node"
+        },
+        "uniqueItems": true
+    }
 }

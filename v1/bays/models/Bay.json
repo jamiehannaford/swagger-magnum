@@ -1,25 +1,25 @@
 {
-  "description": "Represents an existing bay",
-  "allOf": [
-    {
-      "$ref": "BayCreate.json"
-    },
-    {
-      "type": "object",
-      "properties": {
-        "uuid": {
-          "$ref": "properties.json#/uuid"
+    "description": "Represents an existing bay",
+    "allOf": [
+        {
+            "$ref": "BayCreate.json"
         },
-        "updated_at": {
-          "$ref": "../../common/properties.json#/updatedAt"
-        },
-        "links": {
-          "$ref": "../../common/properties.json#/links"
-        },
-        "created_at": {
-          "$ref": "../../common/properties.json#/createdAt"
+        {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "$ref": "properties.json#/uuid"
+                },
+                "updated_at": {
+                    "$ref": "../../common/properties.json#/updatedAt"
+                },
+                "links": {
+                    "$ref": "../../common/properties.json#/links"
+                },
+                "created_at": {
+                    "$ref": "../../common/properties.json#/createdAt"
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }

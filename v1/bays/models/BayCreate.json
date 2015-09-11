@@ -1,37 +1,39 @@
 {
-  "type": "object",
-  "description": "Represents a new bay to be created",
-  "required": ["baymodel_id"],
-  "properties": {
-    "name": {
-      "$ref": "properties.json#/name"
-    },
-    "baymodel_id": {
-      "$ref": "properties.json#/bayModelId"
-    },
-    "node_count": {
-      "$ref": "properties.json#/nodeCount"
-    },
-    "master_count": {
-      "$ref": "properties.json#/masterCount"
-    },
-    "bay_create_timeout": {
-      "$ref": "properties.json#/bayCreateTimeout"
-    },
-    "status": {
-      "$ref": "properties.json#/status"
-    },
-    "status_reason": {
-      "$ref": "properties.json#/statusReason"
-    },
-    "discovery_url": {
-      "$ref": "properties.json#/discoveryUrl"
-    },
-    "api_address": {
-      "$ref": "properties.json#/apiAddress"
-    },
-    "node_addresses": {
-      "$ref": "properties.json#/nodeAddresses"
+    "type": "object",
+    "description": "Represents a new bay to be created",
+    "required": [
+        "baymodel_id"
+    ],
+    "properties": {
+        "name": {
+            "$ref": "properties.json#/name"
+        },
+        "baymodel_id": {
+            "$ref": "properties.json#/bayModelId"
+        },
+        "node_count": {
+            "$ref": "properties.json#/nodeCount"
+        },
+        "master_count": {
+            "$ref": "properties.json#/masterCount"
+        },
+        "bay_create_timeout": {
+            "$ref": "properties.json#/bayCreateTimeout"
+        },
+        "status": {
+            "$ref": "properties.json#/status"
+        },
+        "status_reason": {
+            "$ref": "properties.json#/statusReason"
+        },
+        "discovery_url": {
+            "$ref": "properties.json#/discoveryUrl"
+        },
+        "api_address": {
+            "$ref": "properties.json#/apiAddress"
+        },
+        "node_addresses": {
+            "$ref": "properties.json#/nodeAddresses"
+        }
     }
-  }
 }
