@@ -1,113 +1,113 @@
 {
-  "uuid": {
-    "type": "string",
-    "description": "Unique UUID for this baymodel",
-    "format": "uuid"
-  },
-  "name": {
-    "type": "string",
-    "description": "The name of the bay model",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "coe": {
-    "type": "string",
-    "description": "The Container Orchestration Engine for this bay model",
-    "minLength": 1,
-    "maxLength": 255,
-    "required": true
-  },
-  "imageId": {
-    "type": "string",
-    "description": "The image name or UUID to use as a base image for this baymodel",
-    "minLength": 1,
-    "maxLength": 255,
-    "required": true
-  },
-  "flavorId": {
-    "type": "string",
-    "description": "The flavor of this bay model",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "masterFlavorId": {
-    "type": "string",
-    "description": "The flavor of the master node for this bay model",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "dnsNameserver": {
-    "type": "string",
-    "description": "The flavor of the master node for this bay model",
-    "format": "ipv4"
-  },
-  "keypairId": {
-    "description": "The name or id of the nova ssh keypair",
-    "type": "string",
-    "minLength": 1,
-    "maxLength": 255,
-    "required": true
-  },
-  "externalNetworkId": {
-    "description": "The external network to attach the Bay",
-    "type": "string",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "fixedNetwork": {
-    "description": "The fixed network name to attach the Bay",
-    "type": "string",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "apiServerPort": {
-    "description": "The API server port for k8s",
-    "type": "integer",
-    "minumum": 1024,
-    "maximum": 65535
-  },
-  "dockerVolumeSize": {
-    "description": "The size in GB of the docker volume",
-    "type": "integer",
-    "minimum": 1
-  },
-  "sshAuthorizedKey": {
-    "description": "The SSH Authorized Key",
-    "type": "string",
-    "minimumLength": 1
-  },
-  "clusterDistro": {
-    "description": "The Cluster distro for the bay, ex - coreos, fedora-atomic.",
-    "type": "string",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "httpProxy": {
-    "description": "http_proxy for the bay",
-    "type": "string",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "httpsProxy": {
-    "description": "https_proxy for the bay",
-    "type": "string",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "noProxy": {
-    "description": "Its comma separated list of IP addresses for which proxies should not used in the bay",
-    "type": "string",
-    "minLength": 1,
-    "maxLength": 255
-  },
-  "updatedAt": {
-    "description": "The date and time when the entity was last updated",
-    "type": "string",
-    "format": "datetime"
-  },
-  "createdAt": {
-    "description": "The date and time when the entity was created",
-    "type": "string",
-    "format": "datetime"
-  }
+    "uuid": {
+        "type": "string",
+        "description": "Unique UUID for this baymodel",
+        "format": "uuid"
+    },
+    "name": {
+        "type": "string",
+        "description": "The name of the bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "coe": {
+        "type": "string",
+        "description": "The Container Orchestration Engine for this bay model",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "imageId": {
+        "type": "string",
+        "description": "The image name or UUID to use as a base image for this baymodel",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "flavorId": {
+        "type": "string",
+        "description": "The flavor of this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "masterFlavorId": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "dnsNameserver": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "format": "ipv4"
+    },
+    "keypairId": {
+        "description": "The name or id of the nova ssh keypair",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "externalNetworkId": {
+        "description": "The external network to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "fixedNetwork": {
+        "description": "The fixed network name to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "apiServerPort": {
+        "description": "The API server port for k8s",
+        "type": "integer",
+        "minumum": 1024,
+        "maximum": 65535
+    },
+    "dockerVolumeSize": {
+        "description": "The size in GB of the docker volume",
+        "type": "integer",
+        "minimum": 1
+    },
+    "sshAuthorizedKey": {
+        "description": "The SSH Authorized Key",
+        "type": "string",
+        "minimumLength": 1
+    },
+    "clusterDistro": {
+        "description": "The Cluster distro for the bay, ex - coreos, fedora-atomic.",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpProxy": {
+        "description": "http_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpsProxy": {
+        "description": "https_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "noProxy": {
+        "description": "Its comma separated list of IP addresses for which proxies should not used in the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "updatedAt": {
+        "description": "The date and time when the entity was last updated",
+        "type": "string",
+        "format": "datetime"
+    },
+    "createdAt": {
+        "description": "The date and time when the entity was created",
+        "type": "string",
+        "format": "datetime"
+    }
 }

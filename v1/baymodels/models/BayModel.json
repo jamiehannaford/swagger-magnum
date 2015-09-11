@@ -1,25 +1,25 @@
 {
-  "description": "Represents an existing bay model",
-  "allOf": [
-    {
-      "$ref": "NewBayModel.json"
-    },
-    {
-      "type": "object",
-      "properties": {
-        "uuid": {
-          "$ref": "properties.json#/uuid"
+    "description": "Represents an existing bay model",
+    "allOf": [
+        {
+            "$ref": "NewBayModel.json"
         },
-        "updated_at": {
-          "$ref": "properties.json#/updatedAt"
-        },
-        "links": {
-          "$ref": "properties.json#/links"
-        },
-        "created_at": {
-          "$ref": "properties.json#/createdAt"
+        {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "$ref": "properties.json#/uuid"
+                },
+                "updated_at": {
+                    "$ref": "properties.json#/updatedAt"
+                },
+                "links": {
+                    "$ref": "properties.json#/links"
+                },
+                "created_at": {
+                    "$ref": "properties.json#/createdAt"
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }
