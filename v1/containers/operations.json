@@ -147,7 +147,7 @@
       "description": "Permanently deletes a given container",
       "responses": {
         "204": {
-          "$ref": "../common/responses.json#/NoContent",
+          "$ref": "../common/responses.json#/NoContent"
         },
         "404": {
           "$ref": "../common/responses.json#/NotFound"
