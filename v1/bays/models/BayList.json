@@ -1,27 +1,27 @@
 {
-  "type": "object",
-  "description": "Represents an existing bay",
-  "properties": {
-    "uuid": {
-      "$ref": "properties.json#/uuid"
-    },
-    "name": {
-      "$ref": "properties.json#/name"
-    },
-    "baymodel_id": {
-      "$ref": "properties.json#/bayModelId"
-    },
-    "bay_create_timeout": {
-      "$ref": "properties.json#/bayCreateTimeout"
-    },
-    "node_count": {
-      "$ref": "properties.json#/nodeCount"
-    },
-    "master_count": {
-      "$ref": "properties.json#/masterCount"
-    },
-    "status": {
-      "$ref": "properties.json#/status"
+    "type": "object",
+    "description": "Represents an existing bay",
+    "properties": {
+        "uuid": {
+            "$ref": "properties.json#/uuid"
+        },
+        "name": {
+            "$ref": "properties.json#/name"
+        },
+        "baymodel_id": {
+            "$ref": "properties.json#/bayModelId"
+        },
+        "bay_create_timeout": {
+            "$ref": "properties.json#/bayCreateTimeout"
+        },
+        "node_count": {
+            "$ref": "properties.json#/nodeCount"
+        },
+        "master_count": {
+            "$ref": "properties.json#/masterCount"
+        },
+        "status": {
+            "$ref": "properties.json#/status"
+        }
     }
-  }
 }
