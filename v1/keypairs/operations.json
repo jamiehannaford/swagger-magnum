@@ -1,141 +1,141 @@
 {
-  "keypairs": {
-    "get": {
-      "description": "Retrieve a list of keypairs",
-      "responses": {
-        "200": {
-          "$ref": "responses.json#/KeyPairList"
+    "keypairs": {
+        "get": {
+            "description": "Retrieve a list of keypairs",
+            "responses": {
+                "200": {
+                    "$ref": "responses.json#/KeyPairList"
+                },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            },
+            "parameters": [
+                {
+                    "$ref": "../common/parameters.json#/marker"
+                },
+                {
+                    "$ref": "../common/parameters.json#/limit"
+                },
+                {
+                    "$ref": "../common/parameters.json#/sortKey"
+                },
+                {
+                    "$ref": "../common/parameters.json#/sortDir"
+                }
+            ]
         },
-        "default": {
-          "$ref": "../common/responses.json#/BaseError"
+        "post": {
+            "description": "Create a new KeyPair",
+            "responses": {
+                "201": {
+                    "description": "Indicates a successful creation",
+                    "schema": {
+                        "$ref": "models/KeyPair.json"
+                    }
+                },
+                "400": {
+                    "$ref": "../common/responses.json#/MalformedBody"
+                },
+                "404": {
+                    "$ref": "../common/responses.json#/NotFound"
+                },
+                "409": {
+                    "$ref": "../common/responses.json#/Conflict"
+                },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            },
+            "parameters": [
+                {
+                    "name": "json",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "models/KeyPairCreate.json"
+                    }
+                }
+            ]
         }
-      },
-      "parameters": [
-        {
-          "$ref": "../common/parameters.json#/marker"
-        },
-        {
-          "$ref": "../common/parameters.json#/limit"
-        },
-        {
-          "$ref": "../common/parameters.json#/sortKey"
-        },
-        {
-          "$ref": "../common/parameters.json#/sortDir"
-        }
-      ]
     },
-    "post": {
-      "description": "Create a new KeyPair",
-      "responses": {
-        "201": {
-          "description": "Indicates a successful creation",
-          "schema": {
-            "$ref": "models/KeyPair.json"
-          }
-        },
-        "400": {
-          "$ref": "../common/responses.json#/MalformedBody"
-        },
-        "404": {
-          "$ref": "../common/responses.json#/NotFound"
-        },
-        "409": {
-          "$ref": "../common/responses.json#/Conflict"
-        },
-        "default": {
-          "$ref": "../common/responses.json#/BaseError"
+    "keypairsDetail": {
+        "get": {
+            "description": "Retrieve a list of keypairs with detailed information",
+            "responses": {
+                "200": {
+                    "$ref": "responses.json#/KeyPairListDetailed"
+                },
+                "404": {
+                    "$ref": "../common/responses.json#/NotFound"
+                },
+                "409": {
+                    "$ref": "../common/responses.json#/Conflict"
+                },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            },
+            "parameters": [
+                {
+                    "name": "keypair_uuid",
+                    "in": "query",
+                    "description": "Allows filtering the collection according to UUID",
+                    "type": "string",
+                    "format": "uuid"
+                },
+                {
+                    "$ref": "../common/parameters.json#/marker"
+                },
+                {
+                    "$ref": "../common/parameters.json#/limit"
+                },
+                {
+                    "$ref": "../common/parameters.json#/sortKey"
+                },
+                {
+                    "$ref": "../common/parameters.json#/sortDir"
+                }
+            ]
         }
-      },
-      "parameters": [
-        {
-          "name": "json",
-          "in": "body",
-          "required": true,
-          "schema": {
-            "$ref": "models/KeyPairCreate.json"
-          }
-        }
-      ]
-    }
-  },
-  "keypairsDetail": {
-    "get": {
-      "description": "Retrieve a list of keypairs with detailed information",
-      "responses": {
-        "200": {
-          "$ref": "responses.json#/KeyPairListDetailed"
-        },
-        "404": {
-          "$ref": "../common/responses.json#/NotFound"
-        },
-        "409": {
-          "$ref": "../common/responses.json#/Conflict"
-        },
-        "default": {
-          "$ref": "../common/responses.json#/BaseError"
-        }
-      },
-      "parameters": [
-        {
-          "name": "keypair_uuid",
-          "in": "query",
-          "description": "Allows filtering the collection according to UUID",
-          "type": "string",
-          "format": "uuid"
-        },
-        {
-          "$ref": "../common/parameters.json#/marker"
-        },
-        {
-          "$ref": "../common/parameters.json#/limit"
-        },
-        {
-          "$ref": "../common/parameters.json#/sortKey"
-        },
-        {
-          "$ref": "../common/parameters.json#/sortDir"
-        }
-      ]
-    }
-  },
-  "keypairsIdentifier": {
-    "parameters": [
-      {
-        "name": "identifier",
-        "description": "UUID or logical name of the KeyPair.",
-        "in": "path",
-        "required": true,
-        "type": "string"
-      }
-    ],
-    "get": {
-      "description": "Retrieve information about the given KeyPair.",
-      "responses": {
-        "200": {
-          "$ref": "responses.json#/SingleKeyPair"
-        },
-        "404": {
-          "$ref": "../common/responses.json#/NotFound"
-        },
-        "409": {
-          "$ref": "../common/responses.json#/Conflict"
-        }
-      }
     },
-    "delete": {
-      "description": "Permanently deletes a given KeyPair",
-      "responses": {
-        "204": {
-          "$ref": "../common/responses.json#/NoContent",
+    "keypairsIdentifier": {
+        "parameters": [
+            {
+                "name": "identifier",
+                "description": "UUID or logical name of the KeyPair.",
+                "in": "path",
+                "required": true,
+                "type": "string"
+            }
+        ],
+        "get": {
+            "description": "Retrieve information about the given KeyPair.",
+            "responses": {
+                "200": {
+                    "$ref": "responses.json#/SingleKeyPair"
+                },
+                "404": {
+                    "$ref": "../common/responses.json#/NotFound"
+                },
+                "409": {
+                    "$ref": "../common/responses.json#/Conflict"
+                }
+            }
         },
-        "404": {
-          "$ref": "../common/responses.json#/NotFound"
-        },
-        "default": {
-          "$ref": "../common/responses.json#/BaseError"
+        "delete": {
+            "description": "Permanently deletes a given KeyPair",
+            "responses": {
+                "204": {
+                    "$ref": "../common/responses.json#/NoContent"
+                },
+                "404": {
+                    "$ref": "../common/responses.json#/NotFound"
+                },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            }
         }
-      }
     }
-  }
 }

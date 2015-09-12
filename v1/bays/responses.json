@@ -23,6 +23,8 @@
                 "updated_at": "2015-09-04 10:44:40.885958"
             }
         }
+        
+        {"bays": [{"status": "CREATE_IN_PROGRESS", "uuid": "2e8c080f-d1d8-4f1a-8994-7e2e0143e141", "links": [{"href": "http://104.130.20.19:9511/v1/bays/2e8c080f-d1d8-4f1a-8994-7e2e0143e141", "rel": "self"}, {"href": "http://104.130.20.19:9511/bays/2e8c080f-d1d8-4f1a-8994-7e2e0143e141", "rel": "bookmark"}], "master_count": 1, "baymodel_id": "9cc66f06-1d25-4806-b3c3-c2eb74513561", "node_count": 1, "bay_create_timeout": 0, "name": "k8sbay"}]}
     },
     "BayList": {
         "description": "A collection of bays",

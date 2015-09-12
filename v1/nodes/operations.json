@@ -23,8 +23,7 @@
       ]
     },
     "post": {
-      "description": "Create a new node, either virtual (virt)
-      or bare metal (bare).",
+      "description": "Create a new node, either virtual (virt) or bare metal (bare).",
       "responses": {
         "201": {
           "description": "Indicates successful creation.",
@@ -90,7 +89,7 @@
       {
         "name": "identifier",
         "description": "UUID or logical name of a virtual node. A bare
-        metal node has an identifier associated with an ironic_id.",
+         metal node has an identifier associated with an ironic_id.",
         "in": "path",
         "required": true,
         "type": "string"
