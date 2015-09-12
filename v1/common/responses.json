@@ -12,9 +12,10 @@
     "description": "An unexpected error occurred"
   },
   "Conflict": {
-    "description": "A conflict occurred. This is usually because you specified a name that is set for multiple entities."
-  }
-   "media_types":[  
+    "description": "A conflict occurred. This is usually because you specified
+     a name that is set for multiple entities."
+  },
+  "media_types":[  
       {  
          "base":"application/json",
          "type":"application/vnd.openstack.magnum.v1+json"
@@ -81,7 +82,6 @@
          "rel":"bookmark"
       }
    ],
-   "id":"v1",
    "containers":[  
       {  
          "href":"http://localhost/v1/containers/",

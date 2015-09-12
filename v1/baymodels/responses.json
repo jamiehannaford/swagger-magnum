@@ -85,5 +85,8 @@
                 "updated_at": "2015-09-04 10:44:40.885958"
             }
         }
+    },
+    "CreateBayModel": {
+    {"no_proxy": null, "ssh_authorized_key": null, "updated_at": null, "apiserver_port": null, "uuid": "a73416d4-c437-4d73-8daf-e585936a33fa", "docker_volume_size": null, "https_proxy": null, "keypair_id": "testkey", "external_network_id": "public", "created_at": "2015-09-11T20:22:39.500821+00:00", "http_proxy": null, "links": [{"href": "http://104.130.20.19:9511/v1/baymodels/a73416d4-c437-4d73-8daf-e585936a33fa", "rel": "self"}, {"href": "http://104.130.20.19:9511/baymodels/a73416d4-c437-4d73-8daf-e585936a33fa", "rel": "bookmark"}], "cluster_distro": "fedora-atomic", "name": "swarmbaymodel", "fixed_network": null, "image_id": "fedora-21-atomic-3", "coe": "swarm", "flavor_id": "m1.small", "dns_nameserver": "8.8.8.8", "master_flavor_id": null}
     }
 }

@@ -12,12 +12,19 @@
             {
                 "description": "Members common to all operations",
                 "type": "object",
-                "required": [ "op", "path" ],
+                "required": [
+                    "op",
+                    "path"
+                ],
                 "properties": {
-                    "path": { "$ref": "properties.json#/jsonPointer" }
+                    "path": {
+                        "$ref": "properties.json#/jsonPointer"
+                    }
                 }
             },
-            { "$ref": "properties.json#/oneOperation" }
+            {
+                "$ref": "properties.json#/oneOperation"
+            }
         ]
     },
     "definitions": {
@@ -27,47 +34,105 @@
         },
         "add": {
             "description": "add operation. Value can be any JSON value.",
-            "properties": { "op": { "enum": [ "add" ] } },
-            "required": [ "value" ]
+            "properties": {
+                "op": {
+                    "enum": [
+                        "add"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
         "remove": {
             "description": "remove operation. Only a path is specified.",
-            "properties": { "op": { "enum": [ "remove" ] } }
+            "properties": {
+                "op": {
+                    "enum": [
+                        "remove"
+                    ]
+                }
+            }
         },
         "replace": {
             "description": "replace operation. Value can be any JSON value.",
-            "properties": { "op": { "enum": [ "replace" ] } },
-            "required": [ "value" ]
+            "properties": {
+                "op": {
+                    "enum": [
+                        "replace"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
         "move": {
             "description": "move operation. \"from\" is a JSON Pointer.",
             "properties": {
-                "op": { "enum": [ "move" ] },
-                "from": { "$ref": "properties.json#/jsonPointer" }
+                "op": {
+                    "enum": [
+                        "move"
+                    ]
+                },
+                "from": {
+                    "$ref": "properties.json#/jsonPointer"
+                }
             },
-            "required": [ "from" ]
+            "required": [
+                "from"
+            ]
         },
         "copy": {
             "description": "copy operation. \"from\" is a JSON Pointer.",
             "properties": {
-                "op": { "enum": [ "copy" ] },
-                "from": { "$ref": "properties.json#/jsonPointer" }
+                "op": {
+                    "enum": [
+                        "copy"
+                    ]
+                },
+                "from": {
+                    "$ref": "properties.json#/jsonPointer"
+                }
             },
-            "required": [ "from" ]
+            "required": [
+                "from"
+            ]
         },
         "test": {
             "description": "test operation. Value can be any JSON value.",
-            "properties": { "op": { "enum": [ "test" ] } },
-            "required": [ "value" ]
+            "properties": {
+                "op": {
+                    "enum": [
+                        "test"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
         "oneOperation": {
             "oneOf": [
-                { "$ref": "properties.json#/add" },
-                { "$ref": "properties.json#/remove" },
-                { "$ref": "properties.json#/replace" },
-                { "$ref": "properties.json#/move" },
-                { "$ref": "properties.json#/copy" },
-                { "$ref": "properties.json#/test" }
+                {
+                    "$ref": "properties.json#/add"
+                },
+                {
+                    "$ref": "properties.json#/remove"
+                },
+                {
+                    "$ref": "properties.json#/replace"
+                },
+                {
+                    "$ref": "properties.json#/move"
+                },
+                {
+                    "$ref": "properties.json#/copy"
+                },
+                {
+                    "$ref": "properties.json#/test"
+                }
             ]
         }
     }
