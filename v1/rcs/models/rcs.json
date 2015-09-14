@@ -1,34 +1,34 @@
 {
-  "description": "",
-  "allOf": [
-    {
-      "$ref": "createReplicationControllers.json"
-    },
-    {
-      "$ref": "listReplicationControllers.json"
-    },
-    {
-      "$ref": "updateReplicationControllers.json"
-    },
-    {
-      "type": "object",
-      "properties": {
-        "uuid": {
-          "$ref": "properties.json#/uuid"
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "createReplicationControllers.json"
         },
-        "image-id": {
-          "$ref": "properties.json#/images"
+        {
+            "$ref": "listReplicationControllers.json"
         },
-        "links": {
-          "$ref": "properties.json#/links"
+        {
+            "$ref": "updateReplicationControllers.json"
         },
-        "updated_at": {
-          "$ref": "properties.json#/updatedAt"
-        },
-        "created_at": {
-          "$ref": "properties.json#/createdAt"
+        {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "$ref": "properties.json#/uuid"
+                },
+                "image-id": {
+                    "$ref": "properties.json#/images"
+                },
+                "links": {
+                    "$ref": "properties.json#/links"
+                },
+                "updated_at": {
+                    "$ref": "properties.json#/updatedAt"
+                },
+                "created_at": {
+                    "$ref": "properties.json#/createdAt"
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }
