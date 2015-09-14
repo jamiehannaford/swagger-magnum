@@ -1,68 +1,69 @@
 {
-  "podList": {
-    "description": "Lists the collection of pods.",
-    "schema": {
-      "type": "array",
-      "items": {
-        "$ref": "models/pods.json"
-      }
+    "podList": {
+        "description": "Lists the collection of pods.",
+        "schema": {
+            "type": "array",
+            "items": {
+                "$ref": "models/pods.json"
+            }
+        },
+        "examples": {
+            "application/json": {
+                "pods": [
+                    {
+                        "image_id": "Fedora",
+                        "type": "example"
+                    }
+                ]
+            }
+        }
     },
-    "examples": {
-      "application/json": {
-        "pods": [
-          {
-            "image_id": "Fedora",
-            "type": "example"
-          }
-        ]
-        
-      }
-    }
-  },
-  "podCreate": {
-    "description": "A representation of the created pod.",
-    "schema": {
-      "$ref": "models/pods.json"
+    "podCreate": {
+        "description": "A representation of the created pod.",
+        "schema": {
+            "$ref": "models/pods.json"
+        },
+        "examples": {
+            "application/json": {
+                "uuid": "f978db47-9a37-4e9f-8572-804a10abc0aa",
+                "name": "MyPod",
+                "desc": "Pod - used for description",
+                "bay_uuid": "7ae81bb3-dec3-4289-8d6c-da80bd8001ae",
+                "images": "UbuntuImage",
+                "labels": {
+                    "name": "foo"
+                },
+                "status": "Running",
+                "host": "10.0.0.3",
+                "manifest_url": "file:///tmp/rc.yaml",
+                "manifest": {
+                    "metadata": {
+                        "name": "name_of_pod"
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "test",
+                                "image": "test"
+                            }
+                        ]
+                    }
+                },
+                "created_at": "2015-09-05T21:11:54.313059+00:00",
+                "updated_at": null
+            }
+        }
     },
-    "examples":
-    "application/json": {
-    "uuid": "f978db47-9a37-4e9f-8572-804a10abc0aa",
-    "name": "MyPod",
-     "desc": "Pod - used for description",
-     "bay_uuid": "7ae81bb3-dec3-4289-8d6c-da80bd8001ae",
-     "images": "UbuntuImage",
-                     "labels": {"name": "foo"},
-                     "status": "Running",
-                     "host": "10.0.0.3",
-                     "manifest_url": "file:///tmp/rc.yaml",
-                     "manifest": "{
-                         "metadata": {
-                             "name": "name_of_pod"
-                         },
-                         "spec": {
-                             "containers": [
-                                 {
-                                     "name": "test",
-                                     "image": "test"
-                                 }
-                             ]
-                         }
-                     }",
-                     "created_at": "2015-09-05T21:11:54.313059+00:00",
-                     "updated_at": null}
-      }
+    "NotFound": {
+        "description": "Entity was not found"
+    },
+    "MalformedBody": {
+        "description": "The request contained a malformed JSON body"
+    },
+    "NoContent": {
+        "description": "The request was accepted for processing"
+    },
+    "BaseError": {
+        "description": "An unexpected error occurred"
     }
-  },
-  "NotFound": {
-    "description": "Entity was not found"
-  },
-  "MalformedBody": {
-    "description": "The request contained a malformed JSON body"
-  },
-  "NoContent": {
-    "description": "The request was accepted for processing"
-  },
-  "BaseError": {
-    "description": "An unexpected error occurred"
-  }
 }
