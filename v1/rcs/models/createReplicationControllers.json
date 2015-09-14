@@ -1,21 +1,21 @@
 {
-  "type": "object",
-  "description": "Represents a new replication controller (RCS).",
-  "properties": {
-    "name": {
-      "$ref": "properties.json#/name"
-    },
-    "uuid": {
-      "$ref": "properties.json#/uuid"
-    },
-    "image_id": {
-      "$ref": "properties.json#/image_id"
-    },
-    "type": {
-      "$ref": "properties.json#/type"
-    },
-    "ironic_node_id": {
-      "$ref": "properties.json#/ironic_node_id"
+    "type": "object",
+    "description": "Represents a new replication controller (RCS).",
+    "properties": {
+        "name": {
+            "$ref": "properties.json#/name"
+        },
+        "uuid": {
+            "$ref": "properties.json#/uuid"
+        },
+        "image_id": {
+            "$ref": "properties.json#/image_id"
+        },
+        "type": {
+            "$ref": "properties.json#/type"
+        },
+        "ironic_node_id": {
+            "$ref": "properties.json#/ironic_node_id"
+        }
     }
-  }
 }
