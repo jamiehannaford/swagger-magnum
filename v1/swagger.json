@@ -1,8 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "magnum",
+        "title": "OpenStack Containers REST API",
         "version": "1.0"
+        "description": "This REST API provides an abstraction layer to container management solutions such as Docker Swarm, Google Kubernetes, and Apache Mesos."
     },
     "consumes": [
         "application/json"
@@ -12,58 +13,851 @@
     ],
     "paths": {
         "/baymodels": {
-            "$ref": "baymodels/operations.json#/baymodels"
+        "get": {
+            "description": "Retrieve a list of bay models",
+            "responses": {
+                "200": {
+                    "BayModelList": {
+        "description": "A collection of bay models",
+        "schema": {
+            "type": "array",
+            "items": {
+    "description": "Represents an existing bay model",
+    "allOf": [
+        {
+    "type": "object",
+    "description": "Represents a new bay model about to be created",
+    "properties": {
+    "uuid": {
+        "type": "string",
+        "description": "Unique UUID for this baymodel",
+        "format": "uuid"
+    },
+    "name": {
+        "type": "string",
+        "description": "The name of the bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "coe": {
+        "type": "string",
+        "description": "The Container Orchestration Engine for this bay model",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "imageId": {
+        "type": "string",
+        "description": "The image name or UUID to use as a base image for this baymodel",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "flavorId": {
+        "type": "string",
+        "description": "The flavor of this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "masterFlavorId": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "dnsNameserver": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "format": "ipv4"
+    },
+    "keypairId": {
+        "description": "The name or id of the nova ssh keypair",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "externalNetworkId": {
+        "description": "The external network to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "fixedNetwork": {
+        "description": "The fixed network name to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "apiServerPort": {
+        "description": "The API server port for k8s",
+        "type": "integer",
+        "minumum": 1024,
+        "maximum": 65535
+    },
+    "dockerVolumeSize": {
+        "description": "The size in GB of the docker volume",
+        "type": "integer",
+        "minimum": 1
+    },
+    "sshAuthorizedKey": {
+        "description": "The SSH Authorized Key",
+        "type": "string",
+        "minimumLength": 1
+    },
+    "clusterDistro": {
+        "description": "The Cluster distro for the bay, ex - coreos, fedora-atomic.",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpProxy": {
+        "description": "http_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpsProxy": {
+        "description": "https_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "noProxy": {
+        "description": "Its comma separated list of IP addresses for which proxies should not used in the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "updatedAt": {
+        "description": "The date and time when the entity was last updated",
+        "type": "string",
+        "format": "datetime"
+    },
+    "createdAt": {
+        "description": "The date and time when the entity was created",
+        "type": "string",
+        "format": "datetime"
+    }
+},
+        {
+            "type": "object",
+            "properties": {
+    "uuid": {
+        "type": "string",
+        "description": "Unique UUID for this baymodel",
+        "format": "uuid"
+    },"updatedAt": {
+        "description": "The date and time when the entity was last updated",
+        "type": "string",
+        "format": "datetime"
+    },
+    "createdAt": {
+        "description": "The date and time when the entity was created",
+        "type": "string",
+        "format": "datetime"
+    }
+        }
+    ]
+}
         },
+        "examples": {
+            "application/json": {
+                "baymodels": [
+                    {
+                        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+                        "name": "example",
+                        "image_id": "Fedora-k8s",
+                        "apiserver_port": 8080,
+                        "coe": "kubernetes"
+                    }
+                ]
+            }
+        }
+    },
+                "default": {
+                    "BaseError": {
+    "description": "An unexpected error occurred"
+  }
+                }
+            },
+            "parameters": [
+                {"marker": {
+        "name": "marker",
+        "in": "query",
+        "description": "The UUID of the resource to start the collection from.",
+        "type": "string",
+        "format": "uuid"
+    },
+    "limit": {
+        "name": "limit",
+        "in": "query",
+        "description": "Maximum number of resources to return in a single result",
+        "type": "integer"
+    },
+    "sortKey": {
+        "name": "sortKey",
+        "in": "query",
+        "description": "Column to sort results by",
+        "type": "string",
+        "default": "id"
+    },
+    "sortDir": {
+        "name": "sortDir",
+        "in": "query",
+        "description": "The direction to sort",
+        "type": "string",
+        "enum": [
+            "asc",
+            "desc"
+        ],
+        "default": "asc"
+    }
+            ]
+        },
+        "post": {
+            "description": "Create a new bay model",
+            "responses": {
+                "201": {
+                    "description": "Indicates a successful creation",
+                    "schema": {
+                        "description": "Represents an existing bay model."
+                        "allOf": [
+                        {
+    "type": "object",
+    "description": "Represents a new bay model about to be created",
+    "properties": {
+        {
+    "uuid": {
+        "type": "string",
+        "description": "Unique UUID for this baymodel",
+        "format": "uuid"
+    },
+    "name": {
+        "type": "string",
+        "description": "The name of the bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "coe": {
+        "type": "string",
+        "description": "The Container Orchestration Engine for this bay model",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "imageId": {
+        "type": "string",
+        "description": "The image name or UUID to use as a base image for this baymodel",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "flavorId": {
+        "type": "string",
+        "description": "The flavor of this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "masterFlavorId": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "dnsNameserver": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "format": "ipv4"
+    },
+    "keypairId": {
+        "description": "The name or id of the nova ssh keypair",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "externalNetworkId": {
+        "description": "The external network to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "fixedNetwork": {
+        "description": "The fixed network name to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "apiServerPort": {
+        "description": "The API server port for k8s",
+        "type": "integer",
+        "minumum": 1024,
+        "maximum": 65535
+    },
+    "dockerVolumeSize": {
+        "description": "The size in GB of the docker volume",
+        "type": "integer",
+        "minimum": 1
+    },
+    "sshAuthorizedKey": {
+        "description": "The SSH Authorized Key",
+        "type": "string",
+        "minimumLength": 1
+    },
+    "clusterDistro": {
+        "description": "The Cluster distro for the bay, ex - coreos, fedora-atomic.",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpProxy": {
+        "description": "http_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpsProxy": {
+        "description": "https_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "noProxy": {
+        "description": "Its comma separated list of IP addresses for which proxies should not used in the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "updatedAt": {
+        "description": "The date and time when the entity was last updated",
+        "type": "string",
+        "format": "datetime"
+    },
+    "createdAt": {
+        "description": "The date and time when the entity was created",
+        "type": "string",
+        "format": "datetime"
+    }
+}
+                        ]
+                    }
+                },
+                "400": {
+                    "MalformedBody": {
+    "description": "The request contained a malformed JSON body"
+  },
+                "404": {
+                    "NotFound": {
+    "description": "Entity was not found"
+  },
+                "409": {
+                    "Conflict": {
+    "description": "A conflict occurred. This is usually because you specified
+     a name that is set for multiple entities."
+  },
+                "default": {
+                    "BaseError": {
+    "description": "An unexpected error occurred"
+  }
+            },
+            "parameters": [
+                {
+                    "name": "json",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        {
+    "type": "object",
+    "description": "Represents a new bay model about to be created",
+    "properties": {
+        "uuid": {
+        "type": "string",
+        "description": "Unique UUID for this baymodel",
+        "format": "uuid"
+    },
+    "name": {
+        "type": "string",
+        "description": "The name of the bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "coe": {
+        "type": "string",
+        "description": "The Container Orchestration Engine for this bay model",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "imageId": {
+        "type": "string",
+        "description": "The image name or UUID to use as a base image for this baymodel",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "flavorId": {
+        "type": "string",
+        "description": "The flavor of this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "masterFlavorId": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "dnsNameserver": {
+        "type": "string",
+        "description": "The flavor of the master node for this bay model",
+        "format": "ipv4"
+    },
+    "keypairId": {
+        "description": "The name or id of the nova ssh keypair",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255,
+        "required": true
+    },
+    "externalNetworkId": {
+        "description": "The external network to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "fixedNetwork": {
+        "description": "The fixed network name to attach the Bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "apiServerPort": {
+        "description": "The API server port for k8s",
+        "type": "integer",
+        "minumum": 1024,
+        "maximum": 65535
+    },
+    "dockerVolumeSize": {
+        "description": "The size in GB of the docker volume",
+        "type": "integer",
+        "minimum": 1
+    },
+    "sshAuthorizedKey": {
+        "description": "The SSH Authorized Key",
+        "type": "string",
+        "minimumLength": 1
+    },
+    "clusterDistro": {
+        "description": "The Cluster distro for the bay, ex - coreos, fedora-atomic.",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpProxy": {
+        "description": "http_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "httpsProxy": {
+        "description": "https_proxy for the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "noProxy": {
+        "description": "Its comma separated list of IP addresses for which proxies should not used in the bay",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+    },
+    "updatedAt": {
+        "description": "The date and time when the entity was last updated",
+        "type": "string",
+        "format": "datetime"
+    },
+    "createdAt": {
+        "description": "The date and time when the entity was created",
+        "type": "string",
+        "format": "datetime"
+    }
+                }
+            ]
+        }
+    },
         "/baymodels/detail": {
-            "$ref": "baymodels/operations.json#/baymodelsDetail"
+            "get": {
+            "description": "Retrieve a list of baymodels with detailed information",
+            "responses": {
+                "200": "BayModelListDetailed": {
+        "description": "A collection of bay models with detailed information",
+        "schema": {
+            "type": "array",
+            "items": {
+                "$ref": "models/BayModel.json"
+            }
         },
+        "examples": {
+            "application/json": {
+                "baymodels": [
+                    {
+                        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+                        "name": "example",
+                        "image_id": "Fedora-k8s",
+                        "flavor_id": "m1.small",
+                        "master_flavor_id": "m1.small",
+                        "dns_nameserver": "8.8.1.1",
+                        "keypair_id": "keypair1",
+                        "external_network_id": "ffc44e4a-2319-4062-bce0-9ae1c38b05ba",
+                        "fixed_network": "private",
+                        "apiserver_port": 8080,
+                        "docker_volume_size": 25,
+                        "cluster_distro": "fedora-atomic",
+                        "ssh_authorized_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAB",
+                        "coe": "kubernetes",
+                        "http_proxy": "http://proxy.com:123",
+                        "https_proxy": "https://proxy.com:123",
+                        "no_proxy": "192.168.0.1,192.168.0.2,192.168.0.3",
+                        "created_at": "2015-09-04 10:44:40.885958",
+                        "updated_at": "2015-09-04 10:44:40.885958"
+                    }
+                ]
+            }
+        }
+    },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            },
+            "parameters": [
+                {
+                    "name": "baymodel_uuid",
+                    "in": "query",
+                    "description": "Allows filtering the collection according to UUID",
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "properties": [
+                {"marker": {
+        "name": "marker",
+        "in": "query",
+        "description": "The UUID of the resource to start the collection from.",
+        "type": "string",
+        "format": "uuid"
+    },
+    "limit": {
+        "name": "limit",
+        "in": "query",
+        "description": "Maximum number of resources to return in a single result",
+        "type": "integer"
+    },
+    "sortKey": {
+        "name": "sortKey",
+        "in": "query",
+        "description": "Column to sort results by",
+        "type": "string",
+        "default": "id"
+    },
+            ]
+    },
         "/baymodels/{identifier}": {
-            "$ref": "baymodels/operations.json#/baymodelsIdentifier"
+            "parameters": [
+            {
+                "name": "identifier",
+                "description": "UUID or logical name of a bay model.",
+                "in": "path",
+                "required": true,
+                "type": "string"
+            }
+        ],
+        "get": {
+            "description": "Retrieve information about the given bay model.",
+            "responses": {
+                "200": {
+                    "$ref": "responses.json#/SingleBayModel"
+                },
+                "404": {
+                    "$ref": "../common/responses.json#/NotFound"
+                },
+                "409": {
+                    "$ref": "../common/responses.json#/Conflict"
+                },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            }
         },
-        "/bays": {
-            "$ref": "bays/operations.json#/bays"
+        "patch": {
+            "description": "Update an existing baymodel.",
+            "parameters": [
+                {
+                    "name": "jsonPatchDoc",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        {
+    "title": "JSON Patch",
+    "description": "A JSON Schema describing a JSON Patch",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "notes": [
+        "Only required members are accounted for, other members are ignored"
+    ],
+    "type": "array",
+    "items": {
+        "description": "one JSON Patch operation",
+        "allOf": [
+            {
+                "description": "Members common to all operations",
+                "type": "object",
+                "required": [
+                    "op",
+                    "path"
+                ],
+                "properties": {
+                    "path": {
+    "links": {
+        "description": "A list containing a self link and associated baymodel links",
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "The url of a link."
+                },
+                "rel": {
+                    "type": "string",
+                    "description": "The name of a link."
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Indicates the type of document/link."
+                }
+            }
+        }
+    }
+}
+                }
+            },
+            {
+                "oneOperation": {
+            "oneOf": [
+                {
+                    "add": {
+            "description": "add operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "add"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
-        "/bays/detail": {
-            "$ref": "bays/operations.json#/baysDetails"
+                {
+                    "remove": {
+            "description": "remove operation. Only a path is specified.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "remove"
+                    ]
+                }
+            }
         },
-        "/bays/{identifier}": {
-            "$ref": "bays/operations.json#/baysIdentifier"
+                },
+                {
+                    "replace": {
+            "description": "replace operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "replace"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
-        "/containers": {
-            "$ref": "containers/operations.json#/containers"
+                "move": {
+            "description": "move operation. \"from\" is a JSON Pointer.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "move"
+                    ]
+                },
+                "from": {"jsonPointer": {
+            "type": "string",
+            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
+        }
+            },
+            "required": [
+                "from"
+            ]
         },
-        "/containers/{identifier}": {
-            "$ref": "containers/operations.json#/containersIdentifier"
+                {
+                    "copy": {
+            "description": "copy operation. \"from\" is a JSON Pointer.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "copy"
+                    ]
+                },
+                "from": {
+                    "jsonPointer": {
+            "type": "string",
+            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
+        }
+            },
+            "required": [
+                "from"
+            ]
         },
-        "/containers/{identifier}/start": {
-            "$ref": "containers/operations.json#/containersStart"
+                {
+                    "test": {
+            "description": "test operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "test"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
+                }
+            ]
+            }
+        ]
+    },
+    "definitions": {
+        "jsonPointer": {
+            "type": "string",
+            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
         },
-        "/containers/{identifier}/stop": {
-            "$ref": "containers/operations.json#/containersStop"
+        "add": {
+            "description": "add operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "add"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
-        "/containers/{identifier}/pause": {
-            "$ref": "containers/operations.json#/containersPause"
+        "remove": {
+            "description": "remove operation. Only a path is specified.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "remove"
+                    ]
+                }
+            }
         },
-        "/containers/{identifier}/unpause": {
-            "$ref": "containers/operations.json#/containersUnpause"
+        "replace": {
+            "description": "replace operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "replace"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
-        "/containers/{identifier}/reboot": {
-            "$ref": "containers/operations.json#/containersReboot"
+        "move": {
+            "description": "move operation. \"from\" is a JSON Pointer.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "move"
+                    ]
+                },
+                "from": {
+                    "$ref": "properties.json#/jsonPointer"
+                }
+            },
+            "required": [
+                "from"
+            ]
         },
-        "/containers/{identifier}/logs": {
-            "$ref": "containers/operations.json#/containersLogs"
+        "copy": {
+            "description": "copy operation. \"from\" is a JSON Pointer.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "copy"
+                    ]
+                },
+                "from": {
+                    "$ref": "properties.json#/jsonPointer"
+                }
+            },
+            "required": [
+                "from"
+            ]
         },
-        "/containers/{identifier}/execute": {
-            "$ref": "containers/operations.json#/containersExecute"
+        "test": {
+            "description": "test operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "test"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
         },
-        "/x509keypairs": {
-            "$ref": "keypairs/operations.json#/keypairs"
+        
+        }
+    }
+}
+
+                }
+            ],
+            "responses": {
+                "200": {
+                    "$ref": "responses.json#/SingleBayModel"
+                },
+                "400": {
+                    "$ref": "../common/responses.json#/MalformedBody"
+                },
+                "404": {
+                    "$ref": "../common/responses.json#/NotFound"
+                },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            }
         },
-        "/x509keypairs/detail": {
-            "$ref": "keypairs/operations.json#/keypairsDetail"
-        },
-        "/x509keypairs/{identifier}": {
-            "$ref": "keypairs/operations.json#/keypairsIdentifier"
+        "delete": {
+            "description": "Permanently deletes a given bay model",
+            "responses": {
+                "204": {
+                    "$ref": "responses.json#/NoContent"
+                },
+                "404": {
+                    "$ref": "../common/responses.json#/NotFound"
+                },
+                "default": {
+                    "$ref": "../common/responses.json#/BaseError"
+                }
+            }
         }
     }
 }

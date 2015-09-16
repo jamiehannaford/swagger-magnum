@@ -18,12 +18,124 @@
                 ],
                 "properties": {
                     "path": {
-                        "$ref": "properties.json#/jsonPointer"
-                    }
+    "links": {
+        "description": "A list containing a self link and associated baymodel links",
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "The url of a link."
+                },
+                "rel": {
+                    "type": "string",
+                    "description": "The name of a link."
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Indicates the type of document/link."
+                }
+            }
+        }
+    }
+}
                 }
             },
             {
-                "$ref": "properties.json#/oneOperation"
+                "oneOperation": {
+            "oneOf": [
+                {
+                    "add": {
+            "description": "add operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "add"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+                {
+                    "remove": {
+            "description": "remove operation. Only a path is specified.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "remove"
+                    ]
+                }
+            }
+        },
+                },
+                {
+                    "replace": {
+            "description": "replace operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "replace"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+                "move": {
+            "description": "move operation. \"from\" is a JSON Pointer.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "move"
+                    ]
+                },
+                "from": {"jsonPointer": {
+            "type": "string",
+            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
+        }
+            },
+            "required": [
+                "from"
+            ]
+        },
+                {
+                    "copy": {
+            "description": "copy operation. \"from\" is a JSON Pointer.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "copy"
+                    ]
+                },
+                "from": {
+                    "jsonPointer": {
+            "type": "string",
+            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
+        }
+            },
+            "required": [
+                "from"
+            ]
+        },
+                {
+                    "test": {
+            "description": "test operation. Value can be any JSON value.",
+            "properties": {
+                "op": {
+                    "enum": [
+                        "test"
+                    ]
+                }
+            },
+            "required": [
+                "value"
+            ]
+                }
+            ]
             }
         ]
     },
@@ -113,27 +225,7 @@
                 "value"
             ]
         },
-        "oneOperation": {
-            "oneOf": [
-                {
-                    "$ref": "properties.json#/add"
-                },
-                {
-                    "$ref": "properties.json#/remove"
-                },
-                {
-                    "$ref": "properties.json#/replace"
-                },
-                {
-                    "$ref": "properties.json#/move"
-                },
-                {
-                    "$ref": "properties.json#/copy"
-                },
-                {
-                    "$ref": "properties.json#/test"
-                }
-            ]
+        
         }
     }
 }
