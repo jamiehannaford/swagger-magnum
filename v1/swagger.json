@@ -7,68 +7,67 @@
     },
     "consumes": [
         "application/json"
-    ],
+        ],
     "produces": [
         "application/json"
-    ],
+        ],
     "paths": {
         "/baymodels": {
-        "get": {
-            "description": "Retrieve a list of bay models",
-            "responses": {
-                "200": {
-                    "BayModelList": {
-                    "description": "A collection of bay models",
-                    "schema": {
-                    "type": "array",
-                    "items": {
-                    "description": "Represents an existing bay model",
-                    "allOf": {
-                             "type": "object",
-                             "description": "Represents a new bay model about to be created",
-                             "properties": {
-                             "$ref": "#properties/BayModel"
-                              }
-                              }
-        },
-        "examples": {
-            "application/json": {
-                "baymodels": [
-                    {
-                        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
-                        "name": "example",
-                        "image_id": "Fedora-k8s",
-                        "apiserver_port": 8080,
-                        "coe": "kubernetes"
-                    }
-                ]
-            }
-        }
-    },
-                "default": {
-                    
-                }
-            },
-            "parameters": {
-                "$ref": "#/parameters/BayModel"
-        },
-        "post": {
-            "description": "Create a new bay model",
-            "responses": {
+            "get": {
+                "description": "Retrieve a list of bay models",
+                "responses": {
+                        "200": {
+                        "description": "A collection of bay models",
+                        "schema": {
+                            "type": "array",
+                                "items": {
+                                "description": "Represents an existing bay model",
+                                "allOf": [
+                                  {
+                                     "type": "object",
+                                     "description": "Represents a new bay model about to be created",
+                                     "properties": {
+                                         "$ref": "#properties/BayModel"
+                                            }
+                                         }
+                                         ]
+                                    }
+                                  }
+                          },
+                          "parameters": {
+                             "$ref": "#/parameters/BayModel"
+                                       }
+                          },
+                          "examples": {
+                            "application/json": {
+                                "baymodels":
+                                           {"uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+                                            "name": "example",
+                                            "image_id": "Fedora-k8s",
+                                            "apiserver_port": 8080,
+                                            "coe": "kubernetes"
+                                            }
+                                                 }
+                          }
+        }, 
+            "post": {
+               "description": "Create a new bay model",
+               "responses": {
                 "201": {
                     "description": "Indicates a successful creation",
                     "schema": {
                         "description": "Represents an existing bay model.",
                         "allOf": [
-                        {
-                         "type": "object",
-                         "description": "Represents a new bay model about to be created",
-                         "properties": {
-                         "$ref": "#properties/BayModel"
-                         }
-                        }
-                        ]
-     },
+                                {
+                                "type": "object",
+                                "description": "Represents a new bay model about to be created",
+                                "properties": {
+                                    "$ref": "#properties/BayModel"
+                                              }
+                                }
+                                ]
+                            }
+                        },
                 "400": {
                 "$ref": "#/errors/MalformedBody"
   },
@@ -79,32 +78,34 @@
                     "$ref": "#/errors/Conflict"
   },
                 "default": {
-                    "BaseError": {
-    "description": "An unexpected error occurred"
-  }
-            },
-            "parameters": {
+                    "$ref": "#/errors/BaseError"
+                    },
+               "parameters": {
                 "$ref": "#/parameters/BayModel"
-    },
-        "/baymodels/detail": {
-            "get": {
-            "description": "Retrieve a list of baymodels with detailed information",
-            "responses": {
-                "200": {
-        "description": "A collection of bay models with detailed information",
-        "parameters": [
-        {"$ref": "#/parameters/BayModel"}
-        ],
-        "schema": {
-            "type": "array",
-            "items": {
-                "$ref": "#/properties/BayModel"
+                          }
+               }
             }
         },
-        "examples": {
-            "application/json": {
-                "baymodels": [
-                    {
+        "/baymodels/detail": {
+                  "get": {
+                    "description": "Retrieve a list of baymodels with detailed information",
+                    "parameters": {
+                                    "$ref": "#/parameters/BayModel"
+                                  },
+                    "responses": {
+                      "200": {
+                       "description": "A collection of bay models with detailed information",
+                       
+                       "schema": {
+                               "type": "array",
+                               "items": {
+                                       "$ref": "#/properties/BayModel"
+                                        }
+                                },
+                       "example": {
+                       "application/json": {
+                         "baymodels": [
+                        {
                         "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
                         "name": "example",
                         "image_id": "Fedora-k8s",
@@ -124,344 +125,90 @@
                         "no_proxy": "192.168.0.1,192.168.0.2,192.168.0.3",
                         "created_at": "2015-09-04 10:44:40.885958",
                         "updated_at": "2015-09-04 10:44:40.885958"
-                    }
-                ]
-            }
-        }
-    },
-                "default": {
-                    "BaseError": {
-    "description": "An unexpected error occurred"
-  }
-            },
-            "parameters": {
-            "$ref": "#/parameters/BayModel"
-    },
+                        }
+                        ]
+                        }
+                        }
+                        },
+                      "default": {
+                                    "BaseError": 
+                                    {
+                                      "$ref": "#/errors/BaseError"
+                                    }
+                                    }
+                                    }
+                  }
+         },
         "/baymodels/{identifier}": {
-            "parameters": {
-            "$ref": "#/parameters/BayModel"
-            },
-        "get": {
-            "description": "Retrieve information about the given bay model.",
-            "responses": {
-                "200": {
-                    "BayModelList": {
-        "description": "A collection of bay models",
-        "schema": {
-            "type": "array",
-            "items": {
-    "description": "Represents an existing bay model",
-    "allOf": [
-        {
-    "type": "object",
-    "description": "Represents a new bay model about to be created",
-    "properties": {
-            "$ref": "#properties/BayModel"
-               },
-                "404": {
-                    "$ref": "#/errors/NotFound"
-  },
-                "409": {
-                    "$ref": "#/errors/Conflict"
-  },
-        "patch": {
-            "description": "Update an existing baymodel.",
-            "parameters": [
-                {
-                    "name": "jsonPatchDoc",
-                    "in": "body",
-                    "required": true,
+             "get": {
+                 "description": "Retrieve information about the given bay model.",
+                 "parameters": {
+                             "$ref":"#/parameters/BayModel"
+                               },
+                 "responses": {
+                    "200": {
+                    "description": "A collection of bay models",
                     "schema": {
-    "title": "JSON Patch",
-    "description": "A JSON Schema describing a JSON Patch",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "notes": [
-        "Only required members are accounted for, other members are ignored"
-    ],
-    "type": "array",
-    "items": {
-        "description": "one JSON Patch operation",
-        "allOf": [
-            {
-                "description": "Members common to all operations",
-                "type": "object",
-                "required": [
-                    "op",
-                    "path"
-                ],
-                "properties": {
-                    "path": {
-    "links": {
-        "description": "A list containing a self link and associated baymodel links",
-        "type": "array",
-        "items": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "The url of a link."
-                },
-                "rel": {
-                    "type": "string",
-                    "description": "The name of a link."
-                },
-                "type": {
-                    "type": "string",
-                    "description": "Indicates the type of document/link."
-                }
-            }
-        }
-    }
-}
-                }
+                        "type": "array",
+                        "items": {
+                        "description": "Represents an existing bay model",
+                        "allOf": {
+                        "type": "object",
+                        "description": "Represents a new bay model about to be created",
+                        "properties": {
+                           "$ref": "#properties/BayModel"
+                                      }
+                                    }
+                                  }
+                                }
             },
-            {
-                "oneOperation": {
-            "oneOf": [
-                {
-                    "add": {
-            "description": "Add operation. Value can be any JSON value.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "add"
-                    ]
-                }
-            },
-            "required": [
-                "value"
-            ]
-        },
-                    "remove": {
-            "description": "Remove operation. Only a path is specified.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "remove"
-                    ]
-                }
-            }
-        },
-                    "replace": {
-            "description": "Replace operation. Value can be any JSON value.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "replace"
-                    ]
-                }
-            },
-            "required": [
-                "value"
-            ]
-        },
-                "move": {
-            "description": "Move operation. \"from\" is a JSON Pointer.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "move"
-                    ]
-                },
-                "from": {"jsonPointer": {
-            "type": "string",
-            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
-        }
-            },
-            "required": [
-                "from"
-            ]
-        },
-                    "copy": {
-            "description": "Copy operation. \"from\" is a JSON Pointer.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "copy"
-                    ]
-                },
-                "from": {
-                    "jsonPointer": {
-            "type": "string",
-            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
-        }
-            },
-            "required": [
-                "from"
-            ]
-        },
-                    "test": {
-            "description": "Test operation. Value can be any JSON value.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "test"
-                    ]
-                }
-            }
-            "required": [
-                "value"
-            ]
+                    "404": {
+                    "$ref": "#/errors/NotFound"
+                       },
+                    "409": {
+                    "$ref": "#/errors/Conflict"
+                       }
+                 }
+                 }
+                 }
     },
-    "definitions": {
-        "jsonPointer": {
-            "type": "string",
-            "pattern": "^(/[^/~]*(~[01][^/~]*)*)*$"
-        },
-        "add": {
-            "description": "add operation. Value can be any JSON value.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "add"
-                    ]
-                }
-            },
-            "required": [
-                "value"
-            ]
-        },
-        "remove": {
-            "description": "remove operation. Only a path is specified.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "remove"
-                    ]
-                }
-            }
-        },
-        "replace": {
-            "description": "replace operation. Value can be any JSON value.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "replace"
-                    ]
-                }
-            },
-            "required": [
-                "value"
-            ]
-        },
-        "move": {
-            "description": "move operation. \"from\" is a JSON Pointer.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "move"
-                    ]
-                },
-                "from": {
-                    "$ref": "properties.json#/jsonPointer"
-                }
-            },
-            "required": [
-                "from"
-            ]
-        },
-        "copy": {
-            "description": "copy operation. \"from\" is a JSON Pointer.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "copy"
-                    ]
-                },
-                "from": {
-                    "$ref": "properties.json#/jsonPointer"
-                }
-            },
-            "required": [
-                "from"
-            ]
-        },
-        "test": {
-            "description": "test operation. Value can be any JSON value.",
-            "properties": {
-                "op": {
-                    "enum": [
-                        "test"
-                    ]
-                }
-            },
-            "required": [
-                "value"
-            ]
-        },
-        
-        }
+    "parameters": {
+                   "BayModel": {
+                     "marker": {
+                         "name": "marker",
+                         "in": "query",
+                         "description": "The UUID of the resource to start the collection from.",
+                         "type": "string",
+                         "format": "uuid"
+                       
+                     },
+                         "limit": {
+                           "name": "limit",
+                           "in": "query",
+                           "description": "Maximum number of resources to return in a single result",
+                           "type": "integer"
+                                   },
+                     "sortKey": {
+                         "name": "sortKey",
+                         "in": "query",
+                         "description": "Column to sort results by",
+                         "type": "string",
+                         "default": "id"
+                     },
+                     "sortDir": {
+                         "name": "sortDir",
+                         "in": "query",
+                         "description": "The direction to sort",
+                         "type": "string",
+                         "enum": [
+                             "asc",
+                             "desc"
+                         ],
+                         "default": "asc"
     }
-}
-
-                }
-            ],
-            "responses": {
-                "200": {
-                    "$ref": "responses.json#/SingleBayModel"
-                },
-                "400": {
-                    "$ref": "../common/responses.json#/MalformedBody"
-                },
-                "404": {
-                    "$ref": "../common/responses.json#/NotFound"
-                },
-                "default": {
-                    "$ref": "../common/responses.json#/BaseError"
-                }
-            }
-        },
-        "delete": {
-            "description": "Permanently deletes a given bay model",
-            "responses": {
-                "204": {
-                    "$ref": "responses.json#/NoContent"
-                },
-                "404": {
-                    "$ref": "../common/responses.json#/NotFound"
-                },
-                "default": {
-                    "$ref": "../common/responses.json#/BaseError"
-                }
-            }
-        }
-    }
-},
-"parameters": {
-"BayModel": {
-    "marker": {
-        "name": "marker",
-        "in": "query",
-        "description": "The UUID of the resource to start the collection from.",
-        "type": "string",
-        "format": "uuid"
-    },
-    "limit": {
-        "name": "limit",
-        "in": "query",
-        "description": "Maximum number of resources to return in a single result",
-        "type": "integer"
-    },
-    "sortKey": {
-        "name": "sortKey",
-        "in": "query",
-        "description": "Column to sort results by",
-        "type": "string",
-        "default": "id"
-    },
-    "sortDir": {
-        "name": "sortDir",
-        "in": "query",
-        "description": "The direction to sort",
-        "type": "string",
-        "enum": [
-            "asc",
-            "desc"
-        ],
-        "default": "asc"
-    }
-},
-"properties": {
+                               }
+                               },
+    "properties": {
 "BayModel": {
     "uuid": {
         "type": "string",
@@ -574,21 +321,21 @@
         "type": "string",
         "format": "datetime"
     }
+}
 },
-"errors": {
-    "BaseError": {
-    "description": "An unexpected error occurred"
-    },
-    "MalformedBody": {
-    "description": "The request contained a malformed JSON body"
-    },
-    "NotFound": {
-    "description": "Entity was not found"
-    },
-    "Conflict": {
-    "description": "A conflict occurred. This is usually because you specified
-     a name that is set for multiple entities."
-     }
-    
+    "errors": {
+           "BaseError": {
+           "description": "An unexpected error occurred"
+                        },
+           "MalformedBody": {
+           "description": "The request contained a malformed JSON body"
+                            },
+           "NotFound": {
+           "description": "Entity was not found"
+                       },
+           "Conflict": {
+           "description": "A conflict occurred. This is usually because you specified a name that is set for multiple entities."
+                       }
+          }
 }
 
