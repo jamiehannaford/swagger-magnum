@@ -185,7 +185,39 @@
                   }
                }
             },
-            "parameters": []
+            "parameters": [
+               {
+                  "name": "marker",
+                  "in": "query",
+                  "description": "The UUID of the resource to start the collection from.",
+                  "type": "string",
+                  "format": "uuid"
+               },
+               {
+                  "name": "limit",
+                  "in": "query",
+                  "description": "Maximum number of resources to return in a single result",
+                  "type": "integer"
+               },
+               {
+                  "name": "sortKey",
+                  "in": "query",
+                  "description": "Column to sort results by",
+                  "type": "string",
+                  "default": "id"
+               },
+               {
+                  "name": "sortDir",
+                  "in": "query",
+                  "description": "The direction to sort",
+                  "type": "string",
+                  "enum": [
+                     "asc",
+                     "desc"
+                  ],
+                  "default": "asc"
+               }
+            ]
          }
       },
       "/baymodels/detail": {

@@ -7,7 +7,20 @@
           "$ref": "responses.json#/BayModelList"
         }
       },
-      "parameters": []
+      "parameters": [
+        {
+          "$ref": "../common/parameters.json#/marker"
+        },
+        {
+          "$ref": "../common/parameters.json#/limit"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortKey"
+        },
+        {
+          "$ref": "../common/parameters.json#/sortDir"
+        }
+      ]
     }
   },
   "baymodelsDetail": {
