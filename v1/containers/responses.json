@@ -22,23 +22,21 @@
         "schema": {
             "type": "array",
             "items": {
-                "schema": {
-                    "$ref": "models/ContainerList.json"
-                }
-            },
-            "examples": {
-                "application/json": {
-                    "containers": [
-                        {
-                            "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
-                            "name": "example",
-                            "image": "ubuntu",
-                            "command": "env",
-                            "status": "Running",
-                            "bay_uuid": "fff114da-3bfa-4a0f-a123-c0dffad9718e"
-                        }
-                    ]
-                }
+                "$ref": "models/ContainerList.json"
+            }
+        },
+        "examples": {
+            "application/json": {
+                "containers": [
+                    {
+                        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+                        "name": "example",
+                        "image": "ubuntu",
+                        "command": "env",
+                        "status": "Running",
+                        "bay_uuid": "fff114da-3bfa-4a0f-a123-c0dffad9718e"
+                    }
+                ]
             }
         }
     },
@@ -47,25 +45,23 @@
         "schema": {
             "type": "array",
             "items": {
-                "schema": {
-                    "$ref": "models/Container.json"
-                }
-            },
-            "examples": {
-                "application/json": {
-                    "containers": [
-                        {
-                            "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
-                            "name": "example",
-                            "image": "ubuntu",
-                            "command": "env",
-                            "status": "Running",
-                            "bay_uuid": "fff114da-3bfa-4a0f-a123-c0dffad9718e",
-                            "created_at": "2015-09-04 10:44:40.885958",
-                            "updated_at": "2015-09-04 10:44:40.885958"
-                        }
-                    ]
-                }
+                "$ref": "models/Container.json"
+            }
+        },
+        "examples": {
+            "application/json": {
+                "containers": [
+                    {
+                        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+                        "name": "example",
+                        "image": "ubuntu",
+                        "command": "env",
+                        "status": "Running",
+                        "bay_uuid": "fff114da-3bfa-4a0f-a123-c0dffad9718e",
+                        "created_at": "2015-09-04 10:44:40.885958",
+                        "updated_at": "2015-09-04 10:44:40.885958"
+                    }
+                ]
             }
         }
     }

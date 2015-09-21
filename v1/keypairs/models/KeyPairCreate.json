@@ -9,7 +9,7 @@
       "$ref": "properties.json#/bay_uuid"
     },
     "ca_cert": {
-      "$ref": "properties.json#/status"
+      "$ref": "properties.json#/ca_cert"
     },
     "certificate": {
       "$ref": "properties.json#/certificate"

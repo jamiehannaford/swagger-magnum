@@ -24,7 +24,7 @@
             "$ref": "bays/operations.json#/bays"
         },
         "/bays/detail": {
-            "$ref": "bays/operations.json#/baysDetails"
+            "$ref": "bays/operations.json#/baysDetail"
         },
         "/bays/{identifier}": {
             "$ref": "bays/operations.json#/baysIdentifier"

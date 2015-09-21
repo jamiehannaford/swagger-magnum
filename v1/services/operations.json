@@ -97,7 +97,7 @@
           "in": "body",
           "required": true,
           "schema": {
-            "$ref": "../common/jsonPath.json"
+            "$ref": "../common/jsonPatch.json"
           }
         }
       ],

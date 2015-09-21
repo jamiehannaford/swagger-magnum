@@ -19,5 +19,15 @@
                 }
             }
         }
+    },
+    "updatedAt": {
+        "description": "The date and time when the entity was last updated",
+        "type": "string",
+        "format": "datetime"
+    },
+    "createdAt": {
+        "description": "The date and time when the entity was created",
+        "type": "string",
+        "format": "datetime"
     }
 }

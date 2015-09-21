@@ -14,15 +14,13 @@
         "type": "string",
         "description": "The Container Orchestration Engine for this bay model",
         "minLength": 1,
-        "maxLength": 255,
-        "required": true
+        "maxLength": 255
     },
     "imageId": {
         "type": "string",
         "description": "The image name or UUID to use as a base image for this baymodel",
         "minLength": 1,
-        "maxLength": 255,
-        "required": true
+        "maxLength": 255
     },
     "flavorId": {
         "type": "string",
@@ -45,8 +43,7 @@
         "description": "The name or id of the nova ssh keypair",
         "type": "string",
         "minLength": 1,
-        "maxLength": 255,
-        "required": true
+        "maxLength": 255
     },
     "externalNetworkId": {
         "description": "The external network to attach the Bay",
@@ -63,7 +60,7 @@
     "apiServerPort": {
         "description": "The API server port for k8s",
         "type": "integer",
-        "minumum": 1024,
+        "minimum": 1024,
         "maximum": 65535
     },
     "dockerVolumeSize": {
@@ -74,7 +71,7 @@
     "sshAuthorizedKey": {
         "description": "The SSH Authorized Key",
         "type": "string",
-        "minimumLength": 1
+        "minLength": 1
     },
     "clusterDistro": {
         "description": "The Cluster distro for the bay, ex - coreos, fedora-atomic.",
@@ -99,15 +96,5 @@
         "type": "string",
         "minLength": 1,
         "maxLength": 255
-    },
-    "updatedAt": {
-        "description": "The date and time when the entity was last updated",
-        "type": "string",
-        "format": "datetime"
-    },
-    "createdAt": {
-        "description": "The date and time when the entity was created",
-        "type": "string",
-        "format": "datetime"
     }
 }

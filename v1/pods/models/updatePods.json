@@ -11,7 +11,7 @@
                     "$ref": "properties.json#/uuid"
                 },
                 "links": {
-                    "$ref": "properties.json#/links"
+                    "$ref": "../common/properties.json#/links"
                 }
             }
         }

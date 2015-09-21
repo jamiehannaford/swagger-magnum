@@ -127,7 +127,7 @@
                     "in": "body",
                     "required": true,
                     "schema": {
-                        "$ref": "../common/jsonPath.json"
+                        "$ref": "../common/jsonPatch.json"
                     }
                 }
             ],
@@ -166,13 +166,13 @@
                     "description": "Indicates a successful action"
                 },
                 "404": {
-                    "$ref": "../common/responses#/NotFound"
+                    "$ref": "../common/responses.json#/NotFound"
                 },
                 "409": {
-                    "$ref": "../common/responses#/Conflict"
+                    "$ref": "../common/responses.json#/Conflict"
                 },
                 "default": {
-                    "$ref": "../common/responses#/BaseError"
+                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
             "parameters": [
@@ -190,13 +190,13 @@
                     "description": "Indicates a successful action"
                 },
                 "404": {
-                    "$ref": "../common/responses#/NotFound"
+                    "$ref": "../common/responses.json#/NotFound"
                 },
                 "409": {
-                    "$ref": "../common/responses#/Conflict"
+                    "$ref": "../common/responses.json#/Conflict"
                 },
                 "default": {
-                    "$ref": "../common/responses#/BaseError"
+                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
             "parameters": [
@@ -214,13 +214,13 @@
                     "description": "Indicates a successful action"
                 },
                 "404": {
-                    "$ref": "../common/responses#/NotFound"
+                    "$ref": "../common/responses.json#/NotFound"
                 },
                 "409": {
-                    "$ref": "../common/responses#/Conflict"
+                    "$ref": "../common/responses.json#/Conflict"
                 },
                 "default": {
-                    "$ref": "../common/responses#/BaseError"
+                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
             "parameters": [
@@ -238,13 +238,13 @@
                     "description": "Indicates a successful action"
                 },
                 "404": {
-                    "$ref": "../common/responses#/NotFound"
+                    "$ref": "../common/responses.json#/NotFound"
                 },
                 "409": {
-                    "$ref": "../common/responses#/Conflict"
+                    "$ref": "../common/responses.json#/Conflict"
                 },
                 "default": {
-                    "$ref": "../common/responses#/BaseError"
+                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
             "parameters": [
@@ -262,13 +262,13 @@
                     "description": "Indicates a successful action"
                 },
                 "404": {
-                    "$ref": "../common/responses#/NotFound"
+                    "$ref": "../common/responses.json#/NotFound"
                 },
                 "409": {
-                    "$ref": "../common/responses#/Conflict"
+                    "$ref": "../common/responses.json#/Conflict"
                 },
                 "default": {
-                    "$ref": "../common/responses#/BaseError"
+                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
             "parameters": [
@@ -286,13 +286,13 @@
                     "description": "Indicates a successful action"
                 },
                 "404": {
-                    "$ref": "../common/responses#/NotFound"
+                    "$ref": "../common/responses.json#/NotFound"
                 },
                 "409": {
-                    "$ref": "../common/responses#/Conflict"
+                    "$ref": "../common/responses.json#/Conflict"
                 },
                 "default": {
-                    "$ref": "../common/responses#/BaseError"
+                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
             "parameters": [
@@ -310,13 +310,13 @@
                     "description": "Indicates a successful action"
                 },
                 "404": {
-                    "$ref": "../common/responses#/NotFound"
+                    "$ref": "../common/responses.json#/NotFound"
                 },
                 "409": {
-                    "$ref": "../common/responses#/Conflict"
+                    "$ref": "../common/responses.json#/Conflict"
                 },
                 "default": {
-                    "$ref": "../common/responses#/BaseError"
+                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
             "parameters": [

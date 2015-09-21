@@ -5,58 +5,9 @@
             "responses": {
                 "200": {
                     "$ref": "responses.json#/BayModelList"
-                },
-                "default": {
-                    "$ref": "../common/responses.json#/BaseError"
                 }
             },
-            "parameters": [
-                {
-                    "$ref": "../common/parameters.json#/marker"
-                },
-                {
-                    "$ref": "../common/parameters.json#/limit"
-                },
-                {
-                    "$ref": "../common/parameters.json#/sortKey"
-                },
-                {
-                    "$ref": "../common/parameters.json#/sortDir"
-                }
-            ]
-        },
-        "post": {
-            "description": "Create a new baymodel",
-            "responses": {
-                "201": {
-                    "description": "Indicates a successful creation",
-                    "schema": {
-                        "$ref": "models/BayModel.json"
-                    }
-                },
-                "400": {
-                    "$ref": "../common/responses.json#/MalformedBody"
-                },
-                "404": {
-                    "$ref": "../common/responses.json#/NotFound"
-                },
-                "409": {
-                    "$ref": "../common/responses.json#/Conflict"
-                },
-                "default": {
-                    "$ref": "../common/responses.json#/BaseError"
-                }
-            },
-            "parameters": [
-                {
-                    "name": "json",
-                    "in": "body",
-                    "required": true,
-                    "schema": {
-                        "$ref": "models/NewBayModel.json"
-                    }
-                }
-            ]
+            "parameters": []
         }
     },
     "baymodelsDetail": {
@@ -79,16 +30,16 @@
                     "format": "uuid"
                 },
                 {
-                    "$ref": "parameters.json#/marker"
+                    "$ref": "../common/parameters.json#/marker"
                 },
                 {
-                    "$ref": "parameters.json#/limit"
+                    "$ref": "../common/parameters.json#/limit"
                 },
                 {
-                    "$ref": "parameters.json#/sortKey"
+                    "$ref": "../common/parameters.json#/sortKey"
                 },
                 {
-                    "$ref": "parameters.json#/sortDir"
+                    "$ref": "../common/parameters.json#/sortDir"
                 }
             ]
         }
@@ -128,7 +79,7 @@
                     "in": "body",
                     "required": true,
                     "schema": {
-                        "$ref": "../common/jsonPath.json"
+                        "$ref": "../common/jsonPatch.json"
                     }
                 }
             ],
@@ -151,7 +102,7 @@
             "description": "Permanently deletes a given bay model",
             "responses": {
                 "204": {
-                    "$ref": "responses.json#/NoContent"
+                    "$ref": "../common/responses.json#/NoContent"
                 },
                 "404": {
                     "$ref": "../common/responses.json#/NotFound"

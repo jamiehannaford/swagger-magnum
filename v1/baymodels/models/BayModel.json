@@ -11,13 +11,13 @@
                     "$ref": "properties.json#/uuid"
                 },
                 "updated_at": {
-                    "$ref": "properties.json#/updatedAt"
+                    "$ref": "../../common/properties.json#/updatedAt"
                 },
                 "links": {
-                    "$ref": "properties.json#/links"
+                    "$ref": "../../common/properties.json#/links"
                 },
                 "created_at": {
-                    "$ref": "properties.json#/createdAt"
+                    "$ref": "../../common/properties.json#/createdAt"
                 }
             }
         }

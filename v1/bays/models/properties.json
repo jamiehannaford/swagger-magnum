@@ -12,8 +12,7 @@
     },
     "bayModelId": {
         "type": "string",
-        "description": "The bay model UUID",
-        "required": true
+        "description": "The bay model UUID"
     },
     "nodeCount": {
         "type": "integer",

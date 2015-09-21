@@ -17,7 +17,7 @@
           "$ref": "properties.json#/bay_uuid"
         },
         "links": {
-          "$ref": "properties.json#/links"
+          "$ref": "../common/properties.json#/links"
         },
         "updated_at": {
           "$ref": "properties.json#/updatedAt"

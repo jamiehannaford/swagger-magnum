@@ -22,23 +22,21 @@
         "schema": {
             "type": "array",
             "items": {
-                "schema": {
-                    "$ref": "models/KeyPairList.json"
-                }
-            },
-            "examples": {
-                "application/json": {
-                    "keypairs": [
-                        {
-                            "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
-                            "name": "example",
-                            "bay_uuid": "7ae81bb3-dec3-4289-8d6c-da80bd8001ae",
-                            "ca_cert": "AAA....AAA",
-                            "certificate": "BBB....BBB",
-                            "private_key": "CCC....CCC"
-                        }
-                    ]
-                }
+                "$ref": "models/KeyPairList.json"
+            }
+        },
+        "examples": {
+            "application/json": {
+                "keypairs": [
+                    {
+                        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+                        "name": "example",
+                        "bay_uuid": "7ae81bb3-dec3-4289-8d6c-da80bd8001ae",
+                        "ca_cert": "AAA....AAA",
+                        "certificate": "BBB....BBB",
+                        "private_key": "CCC....CCC"
+                    }
+                ]
             }
         }
     },
@@ -47,21 +45,19 @@
         "schema": {
             "type": "array",
             "items": {
-                "schema": {
-                    "$ref": "models/KeyPair.json"
-                }
-            },
-            "examples": {
-                "application/json": {
-                    "keypairs": [
-                        {
-                            "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
-                            "name": "example",
-                            "created_at": "2015-09-04 10:44:40.885958",
-                            "updated_at": "2015-09-04 10:44:40.885958"
-                        }
-                    ]
-                }
+                "$ref": "models/KeyPair.json"
+            }
+        },
+        "examples": {
+            "application/json": {
+                "keypairs": [
+                    {
+                        "uuid": "27e3153e-d5bf-4b7e-b517-fb518e17f34c",
+                        "name": "example",
+                        "created_at": "2015-09-04 10:44:40.885958",
+                        "updated_at": "2015-09-04 10:44:40.885958"
+                    }
+                ]
             }
         }
     }
