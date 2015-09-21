@@ -1,6 +1,8 @@
 # Swagger API for OpenStack Magnum 
 
-## Install tools
+## Install helper tools
+
+In the root directory of this repository, run:
 
 ```terminal
 npm install swagger-parser@alpha
