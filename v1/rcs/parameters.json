@@ -1,41 +1,41 @@
 {
-    "marker": {
-        "name": "marker",
-        "in": "query",
-        "description": "The UUID of the resource to start the collection from.",
-        "type": "string",
-        "format": "uuid"
-    },
-    "limit": {
-        "name": "limit",
-        "in": "query",
-        "description": "Maximum number of resources to return in a single result",
-        "type": "integer"
-    },
-    "sortKey": {
-        "name": "sortKey",
-        "in": "query",
-        "description": "Column to sort results by",
-        "type": "string",
-        "default": "id"
-    },
-    "sortDir": {
-        "name": "sortDir",
-        "in": "query",
-        "description": "The direction to sort",
-        "type": "string",
-        "enum": [
-            "asc",
-            "desc"
-        ],
-        "default": "asc"
-    },
-    "jsonPatchDoc": {
-        "name": "jsonPatchDoc",
-        "in": "body",
-        "description": "The JSON PATCH document to be applied to the entity.",
-        "schema": {
-            "$ref": "../common/jsonPatch.json"
-        }
+  "marker": {
+    "name": "marker",
+    "in": "query",
+    "description": "The UUID of the resource to start the collection from.",
+    "type": "string",
+    "format": "uuid"
+  },
+  "limit": {
+    "name": "limit",
+    "in": "query",
+    "description": "Maximum number of resources to return in a single result",
+    "type": "integer"
+  },
+  "sortKey": {
+    "name": "sortKey",
+    "in": "query",
+    "description": "Column to sort results by",
+    "type": "string",
+    "default": "id"
+  },
+  "sortDir": {
+    "name": "sortDir",
+    "in": "query",
+    "description": "The direction to sort",
+    "type": "string",
+    "enum": [
+      "asc",
+      "desc"
+    ],
+    "default": "asc"
+  },
+  "jsonPatchDoc": {
+    "name": "jsonPatchDoc",
+    "in": "body",
+    "description": "The JSON PATCH document to be applied to the entity.",
+    "schema": {
+      "$ref": "../common/jsonPatch.json"
     }
+  }
 }

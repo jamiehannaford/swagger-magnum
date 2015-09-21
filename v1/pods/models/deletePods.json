@@ -1,12 +1,12 @@
 {
-    "type": "object",
-    "description": "Deletes a named pod.",
-    "properties": {
-        "name": {
-            "$ref": "properties.json#/name"
-        },
-        "uuid": {
-            "$ref": "properties.json#/uuid"
-        }
+  "type": "object",
+  "description": "Deletes a named pod.",
+  "properties": {
+    "name": {
+      "$ref": "properties.json#/name"
+    },
+    "uuid": {
+      "$ref": "properties.json#/uuid"
     }
+  }
 }

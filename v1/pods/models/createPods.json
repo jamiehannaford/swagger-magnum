@@ -1,36 +1,36 @@
 {
-    "type": "object",
-    "description": "Represents a new pod.",
-    "properties": {
-        "name": {
-            "$ref": "properties.json#/name"
-        },
-        "desc": {
-            "$ref": "properties.json#/desc"
-        },
-        "uuid": {
-            "$ref": "properties.json#/uuid"
-        },
-        "bay_uuid": {
-            "$ref": "properties.json#/bay_uuid"
-        },
-        "images": {
-            "$ref": "properties.json#/images"
-        },
-        "labels": {
-            "$ref": "properties.json#/labels"
-        },
-        "status": {
-            "$ref": "properties.json#/status"
-        },
-        "host": {
-            "$ref": "properties.json#/host"
-        },
-        "manifest_url": {
-            "$ref": "properties.json#/manifest_url"
-        },
-        "manifest": {
-            "$ref": "properties.json#/manifest"
-        }
+  "type": "object",
+  "description": "Represents a new pod.",
+  "properties": {
+    "name": {
+      "$ref": "properties.json#/name"
+    },
+    "desc": {
+      "$ref": "properties.json#/desc"
+    },
+    "uuid": {
+      "$ref": "properties.json#/uuid"
+    },
+    "bay_uuid": {
+      "$ref": "properties.json#/bay_uuid"
+    },
+    "images": {
+      "$ref": "properties.json#/images"
+    },
+    "labels": {
+      "$ref": "properties.json#/labels"
+    },
+    "status": {
+      "$ref": "properties.json#/status"
+    },
+    "host": {
+      "$ref": "properties.json#/host"
+    },
+    "manifest_url": {
+      "$ref": "properties.json#/manifest_url"
+    },
+    "manifest": {
+      "$ref": "properties.json#/manifest"
     }
+  }
 }

@@ -1,69 +1,69 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "title": "magnum",
-        "version": "1.0"
+  "swagger": "2.0",
+  "info": {
+    "title": "magnum",
+    "version": "1.0"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/baymodels": {
+      "$ref": "baymodels/operations.json#/baymodels"
     },
-    "consumes": [
-        "application/json"
-    ],
-    "produces": [
-        "application/json"
-    ],
-    "paths": {
-        "/baymodels": {
-            "$ref": "baymodels/operations.json#/baymodels"
-        },
-        "/baymodels/detail": {
-            "$ref": "baymodels/operations.json#/baymodelsDetail"
-        },
-        "/baymodels/{identifier}": {
-            "$ref": "baymodels/operations.json#/baymodelsIdentifier"
-        },
-        "/bays": {
-            "$ref": "bays/operations.json#/bays"
-        },
-        "/bays/detail": {
-            "$ref": "bays/operations.json#/baysDetail"
-        },
-        "/bays/{identifier}": {
-            "$ref": "bays/operations.json#/baysIdentifier"
-        },
-        "/containers": {
-            "$ref": "containers/operations.json#/containers"
-        },
-        "/containers/{identifier}": {
-            "$ref": "containers/operations.json#/containersIdentifier"
-        },
-        "/containers/{identifier}/start": {
-            "$ref": "containers/operations.json#/containersStart"
-        },
-        "/containers/{identifier}/stop": {
-            "$ref": "containers/operations.json#/containersStop"
-        },
-        "/containers/{identifier}/pause": {
-            "$ref": "containers/operations.json#/containersPause"
-        },
-        "/containers/{identifier}/unpause": {
-            "$ref": "containers/operations.json#/containersUnpause"
-        },
-        "/containers/{identifier}/reboot": {
-            "$ref": "containers/operations.json#/containersReboot"
-        },
-        "/containers/{identifier}/logs": {
-            "$ref": "containers/operations.json#/containersLogs"
-        },
-        "/containers/{identifier}/execute": {
-            "$ref": "containers/operations.json#/containersExecute"
-        },
-        "/x509keypairs": {
-            "$ref": "keypairs/operations.json#/keypairs"
-        },
-        "/x509keypairs/detail": {
-            "$ref": "keypairs/operations.json#/keypairsDetail"
-        },
-        "/x509keypairs/{identifier}": {
-            "$ref": "keypairs/operations.json#/keypairsIdentifier"
-        }
+    "/baymodels/detail": {
+      "$ref": "baymodels/operations.json#/baymodelsDetail"
+    },
+    "/baymodels/{identifier}": {
+      "$ref": "baymodels/operations.json#/baymodelsIdentifier"
+    },
+    "/bays": {
+      "$ref": "bays/operations.json#/bays"
+    },
+    "/bays/detail": {
+      "$ref": "bays/operations.json#/baysDetail"
+    },
+    "/bays/{identifier}": {
+      "$ref": "bays/operations.json#/baysIdentifier"
+    },
+    "/containers": {
+      "$ref": "containers/operations.json#/containers"
+    },
+    "/containers/{identifier}": {
+      "$ref": "containers/operations.json#/containersIdentifier"
+    },
+    "/containers/{identifier}/start": {
+      "$ref": "containers/operations.json#/containersStart"
+    },
+    "/containers/{identifier}/stop": {
+      "$ref": "containers/operations.json#/containersStop"
+    },
+    "/containers/{identifier}/pause": {
+      "$ref": "containers/operations.json#/containersPause"
+    },
+    "/containers/{identifier}/unpause": {
+      "$ref": "containers/operations.json#/containersUnpause"
+    },
+    "/containers/{identifier}/reboot": {
+      "$ref": "containers/operations.json#/containersReboot"
+    },
+    "/containers/{identifier}/logs": {
+      "$ref": "containers/operations.json#/containersLogs"
+    },
+    "/containers/{identifier}/execute": {
+      "$ref": "containers/operations.json#/containersExecute"
+    },
+    "/x509keypairs": {
+      "$ref": "keypairs/operations.json#/keypairs"
+    },
+    "/x509keypairs/detail": {
+      "$ref": "keypairs/operations.json#/keypairsDetail"
+    },
+    "/x509keypairs/{identifier}": {
+      "$ref": "keypairs/operations.json#/keypairsIdentifier"
     }
+  }
 }

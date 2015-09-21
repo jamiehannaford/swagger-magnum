@@ -1,24 +1,24 @@
 {
-    "identifier": {
-        "name": "identifier",
-        "description": "UUID or logical name of the container.",
-        "in": "path",
-        "required": true,
-        "type": "string"
-    },
-    "execute": {
-        "name": "command",
-        "description": "The JSON blob which represents the command",
-        "in": "body",
-        "required": true,
-        "schema": {
-            "type": "object",
-            "properties": {
-                "command": {
-                    "type": "string",
-                    "description": "The shell command that will be executed"
-                }
-            }
+  "identifier": {
+    "name": "identifier",
+    "description": "UUID or logical name of the container.",
+    "in": "path",
+    "required": true,
+    "type": "string"
+  },
+  "execute": {
+    "name": "command",
+    "description": "The JSON blob which represents the command",
+    "in": "body",
+    "required": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "The shell command that will be executed"
         }
+      }
     }
+  }
 }

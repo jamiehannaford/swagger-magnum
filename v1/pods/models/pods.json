@@ -1,40 +1,40 @@
 {
-    "description": "A pod is a collection of containers on one physical (bare metal) or virtual machine.",
-    "allOf": [
-        {
-            "$ref": "createPods.json"
+  "description": "A pod is a collection of containers on one physical (bare metal) or virtual machine.",
+  "allOf": [
+    {
+      "$ref": "createPods.json"
+    },
+    {
+      "$ref": "listPods.json"
+    },
+    {
+      "$ref": "updatePods.json"
+    },
+    {
+      "$ref": "listPods.json"
+    },
+    {
+      "$ref": "deletePods.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "$ref": "properties.json#/uuid"
         },
-        {
-            "$ref": "listPods.json"
+        "name": {
+          "$ref": "properties.json#/name"
         },
-        {
-            "$ref": "updatePods.json"
+        "links": {
+          "$ref": "../common/properties.json#/links"
         },
-        {
-            "$ref": "listPods.json"
+        "updated_at": {
+          "$ref": "properties.json#/updatedAt"
         },
-        {
-            "$ref": "deletePods.json"
-        },
-        {
-            "type": "object",
-            "properties": {
-                "uuid": {
-                    "$ref": "properties.json#/uuid"
-                },
-                "name": {
-                    "$ref": "properties.json#/name"
-                },
-                "links": {
-                    "$ref": "../common/properties.json#/links"
-                },
-                "updated_at": {
-                    "$ref": "properties.json#/updatedAt"
-                },
-                "created_at": {
-                    "$ref": "properties.json#/createdAt"
-                }
-            }
+        "created_at": {
+          "$ref": "properties.json#/createdAt"
         }
-    ]
+      }
+    }
+  ]
 }

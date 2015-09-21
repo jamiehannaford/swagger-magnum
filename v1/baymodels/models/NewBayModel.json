@@ -1,55 +1,59 @@
 {
-    "type": "object",
-    "description": "Represents a new bay model about to be created",
-    "required": ["coe", "image_id", "keypair_id"],
-    "properties": {
-        "name": {
-            "$ref": "properties.json#/name"
-        },
-        "coe": {
-            "$ref": "properties.json#/coe"
-        },
-        "image_id": {
-            "$ref": "properties.json#/imageId"
-        },
-        "flavor_id": {
-            "$ref": "properties.json#/flavorId"
-        },
-        "master_flavor_id": {
-            "$ref": "properties.json#/masterFlavorId"
-        },
-        "dns_nameserver": {
-            "$ref": "properties.json#/dnsNameserver"
-        },
-        "keypair_id": {
-            "$ref": "properties.json#/keypairId"
-        },
-        "external_network_id": {
-            "$ref": "properties.json#/externalNetworkId"
-        },
-        "fixed_network": {
-            "$ref": "properties.json#/fixedNetwork"
-        },
-        "apiserver_port": {
-            "$ref": "properties.json#/apiServerPort"
-        },
-        "docker_volume_size": {
-            "$ref": "properties.json#/dockerVolumeSize"
-        },
-        "ssh_authorized_key": {
-            "$ref": "properties.json#/sshAuthorizedKey"
-        },
-        "cluster_distro": {
-            "$ref": "properties.json#/clusterDistro"
-        },
-        "http_proxy": {
-            "$ref": "properties.json#/httpProxy"
-        },
-        "https_proxy": {
-            "$ref": "properties.json#/httpsProxy"
-        },
-        "no_proxy": {
-            "$ref": "properties.json#/noProxy"
-        }
+  "type": "object",
+  "description": "Represents a new bay model about to be created",
+  "required": [
+    "coe",
+    "image_id",
+    "keypair_id"
+  ],
+  "properties": {
+    "name": {
+      "$ref": "properties.json#/name"
+    },
+    "coe": {
+      "$ref": "properties.json#/coe"
+    },
+    "image_id": {
+      "$ref": "properties.json#/imageId"
+    },
+    "flavor_id": {
+      "$ref": "properties.json#/flavorId"
+    },
+    "master_flavor_id": {
+      "$ref": "properties.json#/masterFlavorId"
+    },
+    "dns_nameserver": {
+      "$ref": "properties.json#/dnsNameserver"
+    },
+    "keypair_id": {
+      "$ref": "properties.json#/keypairId"
+    },
+    "external_network_id": {
+      "$ref": "properties.json#/externalNetworkId"
+    },
+    "fixed_network": {
+      "$ref": "properties.json#/fixedNetwork"
+    },
+    "apiserver_port": {
+      "$ref": "properties.json#/apiServerPort"
+    },
+    "docker_volume_size": {
+      "$ref": "properties.json#/dockerVolumeSize"
+    },
+    "ssh_authorized_key": {
+      "$ref": "properties.json#/sshAuthorizedKey"
+    },
+    "cluster_distro": {
+      "$ref": "properties.json#/clusterDistro"
+    },
+    "http_proxy": {
+      "$ref": "properties.json#/httpProxy"
+    },
+    "https_proxy": {
+      "$ref": "properties.json#/httpsProxy"
+    },
+    "no_proxy": {
+      "$ref": "properties.json#/noProxy"
     }
+  }
 }

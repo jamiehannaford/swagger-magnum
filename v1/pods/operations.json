@@ -1,152 +1,152 @@
 {
-    "pods": {
-        "get": {
-            "description": "Retrieve information about all pods.",
-            "responses": {
-                "200": {
-                    "$ref": "responses.json#/podsList"
-                }
-            },
-            "parameters": [
-                {
-                    "$ref": "parameters.json#/marker"
-                },
-                {
-                    "$ref": "parameters.json#/limit"
-                },
-                {
-                    "$ref": "parameters.json#/sortKey"
-                },
-                {
-                    "$ref": "parameters.json#/sortDir"
-                }
-            ]
-        },
-        "post": {
-            "description": "Create a new pod with a manifest file or URL pointing to a manifest for creating a pod.",
-            "responses": {
-                "201": {
-                    "description": "Indicates successful creation.",
-                    "schema": {
-                        "$ref": "models/pods.json"
-                    }
-                },
-                "400": {
-                    "description": "Indicates that the JSON payload provided does not pass validation. A required property could be missing, or a type is incorrect."
-                },
-                "404": {
-                    "description": "Indicates that one of the entities referenced in your JSON payload does not exist."
-                },
-                "409": {
-                    "description": "Indicates a conflict, possibly because an entity already exists for the given name."
-                }
-            },
-            "parameters": [
-                {
-                    "name": "json",
-                    "in": "body",
-                    "required": true,
-                    "schema": {
-                        "$ref": "models/createPods.json"
-                    }
-                }
-            ]
+  "pods": {
+    "get": {
+      "description": "Retrieve information about all pods.",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/podsList"
         }
+      },
+      "parameters": [
+        {
+          "$ref": "parameters.json#/marker"
+        },
+        {
+          "$ref": "parameters.json#/limit"
+        },
+        {
+          "$ref": "parameters.json#/sortKey"
+        },
+        {
+          "$ref": "parameters.json#/sortDir"
+        }
+      ]
     },
-    "podsDetail": {
-        "get": {
-            "description": "Retrieve a list of pods with detailed information.",
-            "responses": {
-                "200": {
-                    "$ref": "responses.json#/podsListDetailed"
-                }
-            },
-            "parameters": [
-                {
-                    "name": "node_uuid",
-                    "in": "query",
-                    "description": "Allows filtering the collection according to UUID",
-                    "type": "string",
-                    "format": "uuid"
-                },
-                {
-                    "$ref": "parameters.json#/marker"
-                },
-                {
-                    "$ref": "parameters.json#/limit"
-                },
-                {
-                    "$ref": "parameters.json#/sortKey"
-                },
-                {
-                    "$ref": "parameters.json#/sortDir"
-                }
-            ]
-        }
-    },
-    "podsIdentifier": {
-        "parameters": [
-            {
-                "name": "identifier",
-                "description": "UUID or logical name of a pod.",
-                "in": "path",
-                "required": true,
-                "type": "string"
-            }
-        ],
-        "imageIdentifier": {
-            "parameters": [
-                {
-                    "name": "identifier",
-                    "description": "UUID or logical name of a pod.",
-                    "in": "path",
-                    "required": true,
-                    "type": "string"
-                }
-            ]
+    "post": {
+      "description": "Create a new pod with a manifest file or URL pointing to a manifest for creating a pod.",
+      "responses": {
+        "201": {
+          "description": "Indicates successful creation.",
+          "schema": {
+            "$ref": "models/pods.json"
+          }
         },
-        "patch": {
-            "description": "Update an existing pod.",
-            "parameters": [
-                {
-                    "name": "pod_uuid",
-                    "in": "body",
-                    "required": true
-                },
-                {
-                    "name": "jsonPatchDoc",
-                    "in": "body",
-                    "required": true,
-                    "schema": {
-                        "$ref": "../common/jsonPatch.json"
-                    }
-                }
-            ],
-            "responses": {
-                "200": {
-                    "$ref": "responses.json#/"
-                },
-                "400": {
-                    "$ref": "responses.json#/MalformedBody"
-                },
-                "404": {
-                    "$ref": "responses.json#/NotFound"
-                }
-            }
+        "400": {
+          "description": "Indicates that the JSON payload provided does not pass validation. A required property could be missing, or a type is incorrect."
         },
-        "delete": {
-            "description": "Permanently deletes a given pod.",
-            "responses": {
-                "204": {
-                    "$ref": "responses.json#/NoContent"
-                },
-                "404": {
-                    "$ref": "responses.json#/NotFound"
-                },
-                "default": {
-                    "$ref": "responses.json#/BaseError"
-                }
-            }
+        "404": {
+          "description": "Indicates that one of the entities referenced in your JSON payload does not exist."
+        },
+        "409": {
+          "description": "Indicates a conflict, possibly because an entity already exists for the given name."
         }
+      },
+      "parameters": [
+        {
+          "name": "json",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "models/createPods.json"
+          }
+        }
+      ]
     }
+  },
+  "podsDetail": {
+    "get": {
+      "description": "Retrieve a list of pods with detailed information.",
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/podsListDetailed"
+        }
+      },
+      "parameters": [
+        {
+          "name": "node_uuid",
+          "in": "query",
+          "description": "Allows filtering the collection according to UUID",
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "$ref": "parameters.json#/marker"
+        },
+        {
+          "$ref": "parameters.json#/limit"
+        },
+        {
+          "$ref": "parameters.json#/sortKey"
+        },
+        {
+          "$ref": "parameters.json#/sortDir"
+        }
+      ]
+    }
+  },
+  "podsIdentifier": {
+    "parameters": [
+      {
+        "name": "identifier",
+        "description": "UUID or logical name of a pod.",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "imageIdentifier": {
+      "parameters": [
+        {
+          "name": "identifier",
+          "description": "UUID or logical name of a pod.",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    "patch": {
+      "description": "Update an existing pod.",
+      "parameters": [
+        {
+          "name": "pod_uuid",
+          "in": "body",
+          "required": true
+        },
+        {
+          "name": "jsonPatchDoc",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "../common/jsonPatch.json"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "$ref": "responses.json#/"
+        },
+        "400": {
+          "$ref": "responses.json#/MalformedBody"
+        },
+        "404": {
+          "$ref": "responses.json#/NotFound"
+        }
+      }
+    },
+    "delete": {
+      "description": "Permanently deletes a given pod.",
+      "responses": {
+        "204": {
+          "$ref": "responses.json#/NoContent"
+        },
+        "404": {
+          "$ref": "responses.json#/NotFound"
+        },
+        "default": {
+          "$ref": "responses.json#/BaseError"
+        }
+      }
+    }
+  }
 }

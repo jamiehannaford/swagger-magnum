@@ -1,55 +1,55 @@
 {
-    "uuid": {
-        "type": "uuid",
-        "description": "Unique UUID for this pod.",
-        "format": "uuid"
-    },
-    "desc": {
-        "type": "string",
-        "description": "Description of this pod.",
-        "minLength": 1,
-        "maxLength": 255
-    },
-    "images": {
-        "type": "string",
-        "description": "A list of images used by containers in this pod.",
-        "minLength": 1,
-        "maxLength": 255,
-        "required": true
-    },
-    "status": {
-        "type": "string",
-        "description": "The most recently observed status of this pod: Running, Pending, or failed.",
-        "minLength": 1,
-        "maxLength": 255,
-        "required": true
-    },
-    "host": {
-        "type": "string",
-        "description": "The host of this pod.",
-        "minLength": 1,
-        "maxLength": 255,
-        "required": true
-    },
-    "links": {
-        "description": "A list containing a self link and associated links.",
-        "type": "array",
-        "items": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "The url of a link."
-                },
-                "rel": {
-                    "type": "string",
-                    "description": "The name of a link."
-                },
-                "type": {
-                    "type": "string",
-                    "description": "Indicates the type of document/link."
-                }
-            }
+  "uuid": {
+    "type": "uuid",
+    "description": "Unique UUID for this pod.",
+    "format": "uuid"
+  },
+  "desc": {
+    "type": "string",
+    "description": "Description of this pod.",
+    "minLength": 1,
+    "maxLength": 255
+  },
+  "images": {
+    "type": "string",
+    "description": "A list of images used by containers in this pod.",
+    "minLength": 1,
+    "maxLength": 255,
+    "required": true
+  },
+  "status": {
+    "type": "string",
+    "description": "The most recently observed status of this pod: Running, Pending, or failed.",
+    "minLength": 1,
+    "maxLength": 255,
+    "required": true
+  },
+  "host": {
+    "type": "string",
+    "description": "The host of this pod.",
+    "minLength": 1,
+    "maxLength": 255,
+    "required": true
+  },
+  "links": {
+    "description": "A list containing a self link and associated links.",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "The url of a link."
+        },
+        "rel": {
+          "type": "string",
+          "description": "The name of a link."
+        },
+        "type": {
+          "type": "string",
+          "description": "Indicates the type of document/link."
         }
+      }
     }
+  }
 }
