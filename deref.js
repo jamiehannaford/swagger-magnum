@@ -2,7 +2,7 @@ var parser = require('swagger-parser');
 var fs     = require('fs');
 
 var inputFile  = __dirname + "/v1/swagger.json";
-var outputFile = __dirname + '/v1/swaggerFull.js';
+var outputFile = __dirname + '/v1/swaggerFull.json';
 
 parser.dereference(inputFile)
   .then(function(api) {
@@ -11,7 +11,7 @@ parser.dereference(inputFile)
       if (err) {
         console.error(err);
       }
-      console.log(file + " was saved!");
+      console.log(outputFile + " was saved!");
     });
   })
   .catch(function(err) {
