@@ -1,14 +1,12 @@
 {
   "uuid": {
     "type": "uuid",
-    "description": "Unique UUID for this Container Orchestration Engine (COE)
-    service.",
+    "description": "Unique UUID for this Container Orchestration Engine (COE) service.",
     "format": "uuid"
   },
   "name": {
     "type": "string",
-    "description": "Name of the Container Orchestration Engine (COE)
-    service.",
+    "description": "Name of the Container Orchestration Engine (COE) service.",
     "minLength": 1,
     "maxLength": 255
   },
@@ -16,7 +14,7 @@
     "type": "uuid",
     "description": "Unique UUID for the bay for the replication controllers.",
     "format": "uuid"
-    },
+  },
   "links": {
     "description": "A list containing a self link and associated links.",
     "type": "array",
