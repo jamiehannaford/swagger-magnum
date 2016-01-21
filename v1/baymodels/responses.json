@@ -9,30 +9,32 @@
     },
     "examples": {
       "application/json": {
-   "baymodels":[
-      {
-         "apiserver_port":null,
-         "uuid":"0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-         "links":[
-            {
-               "href":"http://104.130.19.33:9511/v1/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-               "rel":"self"
-            },
-            {
-               "href":"http://104.130.19.33:9511/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-               "rel":"bookmark"
-            }
-         ],
-         "server_type":"vm",
-         "image_id":"fedora-21-atomic-5",
-         "tls_disabled":false,
-         "registry_enabled":false,
-         "coe":"swarm",
-         "public":false,
-         "name":"dckrswrmbaymod"
+        "baymodels": [
+          {
+            "apiserver_port": null,
+            "uuid": "0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+            "links": [
+              {
+                "href": "http://104.130.19.33:9511/v1/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+                "rel": "self"
+              },
+              {
+                "href": "http://104.130.19.33:9511/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+                "rel": "bookmark"
+              }
+            ],
+            "server_type": "vm",
+            "image_id": "fedora-21-atomic-5",
+            "tls_disabled": false,
+            "registry_enabled": false,
+            "coe": "swarm",
+            "public": false,
+            "name": "dckrswrmbaymod"
+          }
+        ]
       }
-   ]
-},
+    }
+  },
   "BayModelListDetailed": {
     "description": "A collection of bay models with detailed information",
     "schema": {
@@ -76,43 +78,42 @@
     },
     "examples": {
       "application/json": {
-   "links":[
-      {
-         "href":"http://104.130.19.33:9511/v1/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-         "rel":"self"
-      },
-      {
-         "href":"http://104.130.19.33:9511/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-         "rel":"bookmark"
+        "links": [
+          {
+            "href": "http://104.130.19.33:9511/v1/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+            "rel": "self"
+          },
+          {
+            "href": "http://104.130.19.33:9511/baymodels/0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+            "rel": "bookmark"
+          }
+        ],
+        "labels": {},
+        "updated_at": null,
+        "master_flavor_id": null,
+        "fixed_network": null,
+        "uuid": "0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+        "no_proxy": null,
+        "https_proxy": null,
+        "tls_disabled": false,
+        "keypair_id": "testkey",
+        "public": false,
+        "http_proxy": null,
+        "docker_volume_size": null,
+        "server_type": "vm",
+        "external_network_id": "public",
+        "cluster_distro": "fedora-atomic",
+        "image_id": "fedora-21-atomic-5",
+        "registry_enabled": false,
+        "apiserver_port": null,
+        "name": "dckrswrmbaymod",
+        "created_at": "2015-11-17T01:28:52+00:00",
+        "network_driver": "docker",
+        "ssh_authorized_key": null,
+        "coe": "swarm",
+        "flavor_id": "m1.small",
+        "dns_nameserver": "8.8.8.8"
       }
-   ],
-   "labels":{
-   },
-   "updated_at":null,
-   "master_flavor_id":null,
-   "fixed_network":null,
-   "uuid":"0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-   "no_proxy":null,
-   "https_proxy":null,
-   "tls_disabled":false,
-   "keypair_id":"testkey",
-   "public":false,
-   "http_proxy":null,
-   "docker_volume_size":null,
-   "server_type":"vm",
-   "external_network_id":"public",
-   "cluster_distro":"fedora-atomic",
-   "image_id":"fedora-21-atomic-5",
-   "registry_enabled":false,
-   "apiserver_port":null,
-   "name":"dckrswrmbaymod",
-   "created_at":"2015-11-17T01:28:52+00:00",
-   "network_driver":"docker",
-   "ssh_authorized_key":null,
-   "coe":"swarm",
-   "flavor_id":"m1.small",
-   "dns_nameserver":"8.8.8.8"
-   }
     }
   }
 }

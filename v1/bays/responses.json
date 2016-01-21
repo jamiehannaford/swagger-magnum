@@ -5,31 +5,32 @@
       "$ref": "models/Bay.json"
     },
     "examples": {
-   "status":null,
-   "uuid":"3808853c-a38f-4aa2-80ce-95efb8d02998",
-   "links":[
-      {
-         "href":"http://104.130.19.33:9511/v1/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
-         "rel":"self"
-      },
-      {
-         "href":"http://104.130.19.33:9511/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
-         "rel":"bookmark"
-      }
-   ],
-   "updated_at":null,
-   "created_at":"2015-11-17T01:30:13+00:00",
-   "api_address":null,
-   "discovery_url":null,
-   "master_count":1,
-   "baymodel_id":"0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-   "master_addresses":null,
-   "node_count":2,
-   "node_addresses":null,
-   "status_reason":null,
-   "bay_create_timeout":0,
-   "name":"swarmbay"
-},
+      "status": null,
+      "uuid": "3808853c-a38f-4aa2-80ce-95efb8d02998",
+      "links": [
+        {
+          "href": "http://104.130.19.33:9511/v1/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
+          "rel": "self"
+        },
+        {
+          "href": "http://104.130.19.33:9511/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
+          "rel": "bookmark"
+        }
+      ],
+      "updated_at": null,
+      "created_at": "2015-11-17T01:30:13+00:00",
+      "api_address": null,
+      "discovery_url": null,
+      "master_count": 1,
+      "baymodel_id": "0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+      "master_addresses": null,
+      "node_count": 2,
+      "node_addresses": null,
+      "status_reason": null,
+      "bay_create_timeout": 0,
+      "name": "swarmbay"
+    }
+  },
   "BayList": {
     "description": "A collection of bays",
     "schema": {
@@ -62,32 +63,31 @@
         "$ref": "models/Bay.json"
       }
     },
-    "examples": 
-    {
-   "status":"CREATE_IN_PROGRESS",
-   "uuid":"3808853c-a38f-4aa2-80ce-95efb8d02998",
-   "links":[
-      {
-         "href":"http://104.130.19.33:9511/v1/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
-         "rel":"self"
-      },
-      {
-         "href":"http://104.130.19.33:9511/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
-         "rel":"bookmark"
-      }
-   ],
-   "updated_at":"2015-11-17T01:30:14+00:00",
-   "created_at":"2015-11-17T01:30:13+00:00",
-   "api_address":null,
-   "discovery_url":null,
-   "master_count":1,
-   "baymodel_id":"0f832a82-6de0-41e5-be8c-c7096a2e28b2",
-   "master_addresses":[
-   ],
-   "node_count":2,
-   "node_addresses":[
-   ],
-   "status_reason":"Stack CREATE started",
-   "bay_create_timeout":0,
-   "name":"swarmbay"
+    "examples": {
+      "status": "CREATE_IN_PROGRESS",
+      "uuid": "3808853c-a38f-4aa2-80ce-95efb8d02998",
+      "links": [
+        {
+          "href": "http://104.130.19.33:9511/v1/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
+          "rel": "self"
+        },
+        {
+          "href": "http://104.130.19.33:9511/bays/3808853c-a38f-4aa2-80ce-95efb8d02998",
+          "rel": "bookmark"
+        }
+      ],
+      "updated_at": "2015-11-17T01:30:14+00:00",
+      "created_at": "2015-11-17T01:30:13+00:00",
+      "api_address": null,
+      "discovery_url": null,
+      "master_count": 1,
+      "baymodel_id": "0f832a82-6de0-41e5-be8c-c7096a2e28b2",
+      "master_addresses": [],
+      "node_count": 2,
+      "node_addresses": [],
+      "status_reason": "Stack CREATE started",
+      "bay_create_timeout": 0,
+      "name": "swarmbay"
+    }
+  }
 }
