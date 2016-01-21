@@ -1,8 +1,7 @@
 {
   "rcs": {
     "get": {
-      "description": "Retrieve information about all Container Orchestration
-      Engine (COE) services.",
+      "description": "Retrieve information about all Container Orchestration Engine (COE) services.",
       "responses": {
         "200": {
           "$ref": "responses.json#/List"
@@ -83,14 +82,14 @@
           "$ref": "parameters.json#/sortDir"
         }
       ]
-    }
-  },
+    },
     "patch": {
       "description": "Update an existing replication controller.",
       "parameters": [
-        {"name": "image_uuid",
-        "in": "body",
-        "required": true,
+        {
+          "name": "image_uuid",
+          "in": "body",
+          "required": true
         },
         {
           "name": "jsonPatchDoc",
@@ -117,7 +116,7 @@
       "description": "Permanently deletes a given node",
       "responses": {
         "204": {
-          "$ref": "responses.json#/NoContent",
+          "$ref": "responses.json#/NoContent"
         },
         "404": {
           "$ref": "responses.json#/NotFound"

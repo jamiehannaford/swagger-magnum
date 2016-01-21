@@ -88,8 +88,7 @@
     "parameters": [
       {
         "name": "identifier",
-        "description": "UUID or logical name of a virtual node. A bare
-         metal node has an identifier associated with an ironic_id.",
+        "description": "UUID or logical name of a virtual node. A bare metal node has an identifier associated with an ironic_id.",
         "in": "path",
         "required": true,
         "type": "string"
@@ -98,21 +97,21 @@
     "imageIdentifier": {
       "parameters": [
         {
-        "name": "identifier",
-        "description": "UUID or logical name of a virtual node. A bare
-        metal node has an identifier associated with an ironic_id.",
-        "in": "path",
-        "required": true,
-        "type": "string"
-      }
+          "name": "identifier",
+          "description": "UUID or logical name of a virtual node. A bare metal node has an identifier associated with an ironic_id.",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
       ]
     },
     "patch": {
       "description": "Update an existing node.",
       "parameters": [
-        {"name": "node_uuid",
-        "in": "body",
-        "required": true,
+        {
+          "name": "node_uuid",
+          "in": "body",
+          "required": true
         },
         {
           "name": "jsonPatchDoc",
@@ -139,7 +138,7 @@
       "description": "Permanently deletes a given node",
       "responses": {
         "204": {
-          "$ref": "responses.json#/NoContent",
+          "$ref": "responses.json#/NoContent"
         },
         "404": {
           "$ref": "responses.json#/NotFound"

@@ -1,8 +1,6 @@
 {
   "type": "object",
-  "description": "Represents a new Container Orchestration Engine (COE)
-   service. The available services are Google Kubernetes, Apache Mesos, and
-   Docker Swarm.",
+  "description": "Represents a new Container Orchestration Engine (COE) service. The available services are Google Kubernetes, Apache Mesos, and Docker Swarm.",
   "properties": {
     "name": {
       "$ref": "properties.json#/name"
