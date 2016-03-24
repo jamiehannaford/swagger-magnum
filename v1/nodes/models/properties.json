@@ -6,8 +6,7 @@
   },
   "type": {
     "type": "string",
-    "description": "Type of this node, virt or bare
-    to indicate virtual or bare metal (ironic).",
+    "description": "Type of this node, virt or bare to indicate virtual or bare metal (ironic).",
     "minLength": 1,
     "maxLength": 255
   },
