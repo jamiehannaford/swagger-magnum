@@ -9,11 +9,10 @@
     },
     "examples": {
       "application/json": {
-        "nodes":
-          {
-            "image_id": "Fedora",
-            "type": "example"
-          }
+        "nodes": {
+          "image_id": "Fedora",
+          "type": "example"
+        }
       }
     }
   },
@@ -27,14 +26,21 @@
         "ironic_node_id": null,
         "uuid": "69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
         "links": [
-        {"href": "http://104.239.228.18:9511/v1/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
-         "rel": "self"},
-        {"href": "http://104.239.228.18:9511/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
-        "rel": "bookmark"}],
+          {
+            "href": "http://104.239.228.18:9511/v1/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
+            "rel": "self"
+          },
+          {
+            "href": "http://104.239.228.18:9511/nodes/69aa6bb9-11cb-4089-8d58-fe9f6f5431c3",
+            "rel": "bookmark"
+          }
+        ],
         "created_at": "2015-09-04T19:11:54.313069+00:00",
         "updated_at": null,
         "image_id": null,
-        "type": null}
+        "type": null
+      }
+    }
   },
   "NotFound": {
     "description": "Entity was not found"

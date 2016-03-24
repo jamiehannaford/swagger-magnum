@@ -1,6 +1,5 @@
 {
-  "description": "Updates an existing Container Orchestration Engine (COE)
-    service.",
+  "description": "Updates an existing Container Orchestration Engine (COE) service.",
   "allOf": [
     {
       "$ref": "createServices.json"
