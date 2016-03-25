@@ -34,7 +34,24 @@
   },
   "status": {
     "type": "string",
-    "description": "Status of the bay from the heat stack"
+    "description": "Status of the bay from the heat stack",
+    "enum": [
+      "CREATE_IN_PROGRESS",
+      "CREATE_FAILED",
+      "CREATE_COMPLETE",
+      "UPDATE_IN_PROGRESS",
+      "UPDATE_FAILED",
+      "UPDATE_COMPLETE",
+      "DELETE_IN_PROGRESS",
+      "DELETE_FAILED",
+      "DELETE_COMPLETE",
+      "RESUME_COMPLETE",
+      "RESTORE_COMPLETE",
+      "ROLLBACK_COMPLETE",
+      "SNAPSHOT_COMPLETE",
+      "CHECK_COMPLETE",
+      "ADOPT_COMPLETE"
+    ]
   },
   "statusReason": {
     "type": "string",
