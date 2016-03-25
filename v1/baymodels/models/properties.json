@@ -13,8 +13,11 @@
   "coe": {
     "type": "string",
     "description": "The Container Orchestration Engine for this bay model",
-    "minLength": 1,
-    "maxLength": 255
+    "enum": [
+      "kubernetes",
+      "swarm",
+      "mesos"
+    ]
   },
   "imageId": {
     "type": "string",
